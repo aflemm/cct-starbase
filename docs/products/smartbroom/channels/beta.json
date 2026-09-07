@@ -1,9 +1,15 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "product": "smartbroom",
   "channel": "beta",
   "version": "1.0.811",
   "publishedAt": "2026-09-07T16:43:12Z",
+  "presentation": "automatic",
+  "compatibility": {
+    "minimumHardwareVersion": "0.2",
+    "maximumHardwareVersion": "1.0",
+    "minimumCurrentFirmwareVersion": "1.0.600"
+  },
   "image": {
     "url": "../releases/1.0.811/SmartBroom_OTA-1.0.811.bin",
     "size": 762496,

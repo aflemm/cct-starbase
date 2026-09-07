@@ -9,12 +9,19 @@ products. GitHub Pages serves the `docs` directory at
 
 Apps must read a product channel manifest rather than infer a release from a
 directory listing. A manifest names one immutable image and includes its byte
-size and SHA-256 digest.
+size and SHA-256 digest. It also declares the minimum compatible hardware and
+the oldest currently-installed firmware that may receive the image. A release
+may also declare a maximum hardware version when a later board revision is
+incompatible; omission means there is no upper hardware limit.
 
 - SmartBroom beta: `/products/smartbroom/channels/beta.json`
 
 Versioned binaries live beneath `/products/<product>/releases/<version>/`. They
 are never replaced. A channel manifest is the only mutable release pointer.
+
+`presentation` controls whether clients should proactively offer a release
+(`automatic`) or leave it for the user to discover (`manual`). Automatic means
+the app may prompt; it never installs firmware without confirmation.
 
 ## Publishing a SmartBroom beta
 
