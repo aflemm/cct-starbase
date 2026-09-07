@@ -1,7 +1,6 @@
 # CCT Starbase
 
-Starbase is the public, static firmware distribution service for Curling Club
-Technology products. GitHub Pages serves the [`docs`](docs) directory at
+Starbase is the public, static firmware distribution service for Curling Tools products. GitHub Pages serves the [`docs`](docs) directory at
 `https://starbase.curling.tools`.
 
 ## Repository layout
@@ -11,7 +10,7 @@ Each product has a self-contained subtree below `docs/products`:
 ```text
 docs/
 └── products/
-    └── <product>/
+    └── <product-id>/
         ├── channels/
         │   ├── beta.json
         │   └── <channel>.json
@@ -22,10 +21,12 @@ docs/
                 └── SHA256SUMS
 ```
 
-For example, SmartBroom's beta endpoint is:
+Paths use the stable product ID reported by the device, rather than a product
+name. Current product IDs are SmartBroom `3.2`, LightBroom `5.1`, and SmartBeam
+`4.1`. For example, SmartBroom's beta endpoint is:
 
 ```text
-/products/smartbroom/channels/beta.json
+/products/3.2/channels/beta.json
 ```
 
 Firmware images are immutable once published. A corrected or new build must
@@ -40,14 +41,15 @@ different compatible update tracks.
 
 ### Channel manifest
 
-`/products/<product>/channels/<channel>.json` is the endpoint clients check
+`/products/<product-id>/channels/<channel>.json` is the endpoint clients check
 for updates. It contains only the releases that are currently offered on that
 channel.
 
 ```json
 {
   "schemaVersion": 1,
-  "product": "smartbroom",
+  "productId": "3.2",
+  "productName": "SmartBroom",
   "channel": "beta",
   "releases": [
     {
@@ -71,9 +73,12 @@ channel.
 }
 ```
 
-Required candidate fields are `version`, `channel`, `publishedAt`,
+Required manifest fields are `schemaVersion`, `productId`, `productName`,
+`channel`, and `releases`. Required candidate fields are `version`, `channel`, `publishedAt`,
 `presentation`, `compatibility`, `image`, and `releaseNotes`.
 
+- `productId` is the exact dotted numeric product ID reported by the device and
+  must match the product-ID path component. `productName` is display metadata.
 - `version` is a dotted numeric firmware version.
 - `publishedAt` is a UTC ISO 8601 timestamp.
 - `presentation` is `automatic` when an app may proactively offer the update,
@@ -89,7 +94,7 @@ Required candidate fields are `version`, `channel`, `publishedAt`,
   lists, and inline formatting as Markdown rather than displaying markers as
   literal text.
 
-Clients must validate the schema, product, and channel, filter candidates for
+Clients must validate the schema, product ID, and channel, filter candidates for
 their hardware and installed firmware version, then select the newest eligible
 candidate. For automatic checks, only consider `presentation: "automatic"`.
 This selection belongs in the app, not in Starbase, because only the app knows
@@ -97,14 +102,15 @@ the connected product's hardware and installed firmware.
 
 ### Release catalog
 
-`/products/<product>/releases/manifest.json` is the complete catalog of every
+`/products/<product-id>/releases/manifest.json` is the complete catalog of every
 published release for that product, across all channels and hardware tracks.
 Its shape is:
 
 ```json
 {
   "schemaVersion": 1,
-  "product": "smartbroom",
+  "productId": "3.2",
+  "productName": "SmartBroom",
   "releases": ["...the same release candidate objects used by channels..."]
 }
 ```
@@ -125,8 +131,8 @@ From the `smartbroom-firmware` repository:
 The publisher copies the image and `SHA256SUMS`, calculates the image metadata,
 and merges the candidate into both:
 
-- `docs/products/smartbroom/channels/beta.json`
-- `docs/products/smartbroom/releases/manifest.json`
+- `docs/products/3.2/channels/beta.json`
+- `docs/products/3.2/releases/manifest.json`
 
 The following environment variables configure a beta publication when a
 hardware-specific track needs different bounds or release notes:
