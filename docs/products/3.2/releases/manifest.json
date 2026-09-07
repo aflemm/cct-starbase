@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
-  "product": "smartbroom",
+  "productId": "3.2",
+  "productName": "SmartBroom",
   "releases": [
     {
       "version": "1.0.811",
