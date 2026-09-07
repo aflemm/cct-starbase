@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "product": "smartbroom",
+  "channel": "beta",
+  "version": "1.0.811",
+  "publishedAt": "2026-09-07T16:43:12Z",
+  "image": {
+    "url": "../releases/1.0.811/SmartBroom_OTA-1.0.811.bin",
+    "size": 762496,
+    "sha256": "8680e02c73175c697753c87977ec415459464d005b22873efea277e6e2a9e9c0"
+  },
+  "releaseNotes": "SmartBroom beta 1.0.811."
+}
