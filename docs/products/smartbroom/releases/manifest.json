@@ -1,7 +1,6 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 1,
   "product": "smartbroom",
-  "channel": "beta",
   "releases": [
     {
       "version": "1.0.811",
