@@ -37,6 +37,23 @@
         "sha256": "8d6f7ecfe565a6f6e8797c2eef416eb16851885c20d516ae48c73a58bcef3c36"
       },
       "releaseNotes": "SmartBroom beta 1.0.812\n\n- Reports battery capacity health from the fuel gauge's light-load full available capacity, rather than its fixed high-load state-of-health estimate.\n- New batteries should now report a meaningful capacity-health value instead of an artificially reduced value caused by voltage sag at the gauge's 400 mA reference load."
+    },
+    {
+      "version": "1.0.813",
+      "channel": "beta",
+      "publishedAt": "2026-09-07T20:43:41Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.0.813/SmartBroom_OTA-1.0.813.bin",
+        "size": 762160,
+        "sha256": "6d67feea68890123d0033d4b5288709aa4129cfe878228215a1863830d9294a0"
+      },
+      "releaseNotes": "## Battery health calibration\n\n- Uses 295 mAh as the healthy capacity reference at SmartBroom\u2019s 3.3 V termination point.\n- A new battery reporting 295 mAh now displays as 100% healthy; capacity health declines from that cutoff-adjusted baseline."
     }
   ]
 }
