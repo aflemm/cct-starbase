@@ -15,5 +15,5 @@
     "size": 762496,
     "sha256": "8680e02c73175c697753c87977ec415459464d005b22873efea277e6e2a9e9c0"
   },
-  "releaseNotes": "SmartBroom beta 1.0.811."
+  "releaseNotes": "SmartBroom beta 1.0.811\n\n- Improves the automatic firmware-update experience in the SmartBroom app.\n- Adds Starbase delivery checks for hardware and installed-firmware compatibility.\n- Improves OTA transfer feedback and recovery messaging.\n- This is a test beta: keep your phone close to the SmartBroom while updating."
 }
