@@ -54,6 +54,23 @@
         "sha256": "6d67feea68890123d0033d4b5288709aa4129cfe878228215a1863830d9294a0"
       },
       "releaseNotes": "## Battery health calibration\n\n- Uses 295 mAh as the healthy capacity reference at SmartBroom\u2019s 3.3 V termination point.\n- A new battery reporting 295 mAh now displays as 100% healthy; capacity health declines from that cutoff-adjusted baseline."
+    },
+    {
+      "version": "1.0.814",
+      "channel": "beta",
+      "publishedAt": "2026-09-07T21:39:06Z",
+      "presentation": "manual",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.0.814/SmartBroom_OTA-1.0.814.bin",
+        "size": 762352,
+        "sha256": "491f922cbc2229782b5f1b132f976abc0a40c9c548a3895f2f28a4a2d0c99e47"
+      },
+      "releaseNotes": "## OTA and lifetime logging test\n\n- Manual-only beta for validating the SmartBroom app\u2019s Starbase browser and firmware-update sheet.\n- Counts each detected push stroke in the lifetime Device Logs counter; pulls and plows are excluded.\n- Flushes lifetime logs during shutdown and initializes battery-runtime tracking from the current battery state."
     }
   ]
 }
