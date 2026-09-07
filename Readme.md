@@ -11,14 +11,15 @@ Each product has a self-contained subtree below `docs/products`:
 docs/
 └── products/
     └── <product-id>/
-        ├── channels/
-        │   ├── beta.json
-        │   └── <channel>.json
-        └── releases/
-            ├── manifest.json
-            └── <version>/
-                ├── <firmware-image>.bin
-                └── SHA256SUMS
+        └── firmware/
+            ├── channels/
+            │   ├── beta.json
+            │   └── <channel>.json
+            └── releases/
+                ├── manifest.json
+                └── <version>/
+                    ├── <firmware-image>.bin
+                    └── SHA256SUMS
 ```
 
 Paths use the stable product ID reported by the device, rather than a product
@@ -26,7 +27,7 @@ name. Current product IDs are SmartBroom `3.2`, LightBroom `5.1`, and SmartBeam
 `4.1`. For example, SmartBroom's beta endpoint is:
 
 ```text
-/products/3.2/channels/beta.json
+/products/3.2/firmware/channels/beta.json
 ```
 
 Firmware images are immutable once published. A corrected or new build must
@@ -41,7 +42,7 @@ different compatible update tracks.
 
 ### Channel manifest
 
-`/products/<product-id>/channels/<channel>.json` is the endpoint clients check
+`/products/<product-id>/firmware/channels/<channel>.json` is the endpoint clients check
 for updates. It contains only the releases that are currently offered on that
 channel.
 
@@ -102,7 +103,7 @@ the connected product's hardware and installed firmware.
 
 ### Release catalog
 
-`/products/<product-id>/releases/manifest.json` is the complete catalog of every
+`/products/<product-id>/firmware/releases/manifest.json` is the complete catalog of every
 published release for that product, across all channels and hardware tracks.
 Its shape is:
 
@@ -131,8 +132,8 @@ From the `smartbroom-firmware` repository:
 The publisher copies the image and `SHA256SUMS`, calculates the image metadata,
 and merges the candidate into both:
 
-- `docs/products/3.2/channels/beta.json`
-- `docs/products/3.2/releases/manifest.json`
+- `docs/products/3.2/firmware/channels/beta.json`
+- `docs/products/3.2/firmware/releases/manifest.json`
 
 The following environment variables configure a beta publication when a
 hardware-specific track needs different bounds or release notes:
