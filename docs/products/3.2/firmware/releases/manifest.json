@@ -87,6 +87,23 @@
         "sha256": "491f922cbc2229782b5f1b132f976abc0a40c9c548a3895f2f28a4a2d0c99e47"
       },
       "releaseNotes": "## OTA and lifetime logging test\n\n- Manual-only beta for validating the SmartBroom app\u2019s Starbase browser and firmware-update sheet.\n- Counts each detected push stroke in the lifetime Device Logs counter; pulls and plows are excluded.\n- Flushes lifetime logs during shutdown and initializes battery-runtime tracking from the current battery state."
+    },
+    {
+      "version": "1.1.0",
+      "channel": "release",
+      "publishedAt": "2026-09-08T17:16:25Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.0",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.1.0/SmartBroom_OTA-1.1.0.bin",
+        "size": 790528,
+        "sha256": "b53a7cd14ee71db702add8b2e6aa73bf945ed860bfd8694c4b8d04477e129fd4"
+      },
+      "releaseNotes": "## SmartBroom 1.1.0\n\n- Fixes Power Off from the SmartBroom app and TeCalSer when USB power is present.\n- Leaves a failed OTA image pending for rollback until core startup succeeds."
     }
   ]
 }

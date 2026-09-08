@@ -20,6 +20,23 @@
         "sha256": "8f3201f60160f59c2481fd5be79b1daa14ada4f24fa0d808789e52294cafc9cb"
       },
       "releaseNotes": "## SmartBroom 1.0.0\n\n- First signed production release for SmartBroom 4.\n- Records every detected push stroke in Device Logs; pulls and plows are excluded.\n- Saves lifetime device logs during shutdown and correctly starts battery-runtime tracking from the current battery state.\n- Uses the 3.2 product identity and 0.0 default hardware and assembly revisions for uninitialized NVS."
+    },
+    {
+      "version": "1.1.0",
+      "channel": "release",
+      "publishedAt": "2026-09-08T17:16:25Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.0",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.1.0/SmartBroom_OTA-1.1.0.bin",
+        "size": 790528,
+        "sha256": "b53a7cd14ee71db702add8b2e6aa73bf945ed860bfd8694c4b8d04477e129fd4"
+      },
+      "releaseNotes": "## SmartBroom 1.1.0\n\n- Fixes Power Off from the SmartBroom app and TeCalSer when USB power is present.\n- Leaves a failed OTA image pending for rollback until core startup succeeds."
     }
   ]
 }
