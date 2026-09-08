@@ -4,6 +4,23 @@
   "productName": "SmartBroom",
   "releases": [
     {
+      "version": "1.0.0",
+      "channel": "release",
+      "publishedAt": "2026-09-08T16:25:00Z",
+      "presentation": "manual",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.0.0/SmartBroom_OTA-1.0.0.bin",
+        "size": 790528,
+        "sha256": "8f3201f60160f59c2481fd5be79b1daa14ada4f24fa0d808789e52294cafc9cb"
+      },
+      "releaseNotes": "## SmartBroom 1.0.0\n\n- First signed production release for SmartBroom 4.\n- Records every detected push stroke in Device Logs; pulls and plows are excluded.\n- Saves lifetime device logs during shutdown and correctly starts battery-runtime tracking from the current battery state.\n- Uses the 3.2 product identity and 0.0 default hardware and assembly revisions for uninitialized NVS."
+    },
+    {
       "version": "1.0.811",
       "channel": "beta",
       "publishedAt": "2026-09-07T16:43:12Z",
