@@ -103,7 +103,7 @@
         "size": 790528,
         "sha256": "b53a7cd14ee71db702add8b2e6aa73bf945ed860bfd8694c4b8d04477e129fd4"
       },
-      "releaseNotes": "## SmartBroom 1.1.0\n\n- Fixes Power Off from the SmartBroom app and TeCalSer when USB power is present.\n- Leaves a failed OTA image pending for rollback until core startup succeeds."
+      "releaseNotes": "- Fixes remote power-off bug which could cause a device to hang indefinitely"
     }
   ]
 }
