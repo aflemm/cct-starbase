@@ -16,7 +16,6 @@ docs/
             │   ├── beta.json
             │   └── <channel>.json
             └── releases/
-                ├── manifest.json
                 └── <version>/
                     ├── <firmware-image>.bin
                     └── SHA256SUMS
@@ -101,39 +100,17 @@ candidate. For automatic checks, only consider `presentation: "automatic"`.
 This selection belongs in the app, not in Starbase, because only the app knows
 the connected product's hardware and installed firmware.
 
-### Release catalog
-
-`/products/<product-id>/firmware/releases/manifest.json` is the complete catalog of every
-published release for that product, across all channels and hardware tracks.
-Its shape is:
-
-```json
-{
-  "schemaVersion": 1,
-  "productId": "3.2",
-  "productName": "SmartBroom",
-  "releases": ["...the same release candidate objects used by channels..."]
-}
-```
-
-The catalog is for discovery, history, and tooling. It is not an update
-endpoint: clients must use a channel manifest to determine what is actively
-offered.
-
 ## Publishing a SmartBroom beta
 
 From the `smartbroom-firmware` repository:
 
 1. Create the OTA artifact with `tools/package_smartbroom_beta_release.sh`.
 2. Publish it with `tools/publish_smartbroom_beta.sh`.
-3. Review and commit the new immutable release directory, the beta channel
-   manifest, and the product release catalog together.
+3. Review and commit the new immutable release directory and beta channel
+   manifest together.
 
 The publisher copies the image and `SHA256SUMS`, calculates the image metadata,
-and merges the candidate into both:
-
-- `docs/products/3.2/firmware/channels/beta.json`
-- `docs/products/3.2/firmware/releases/manifest.json`
+and merges the candidate into `docs/products/3.2/firmware/channels/beta.json`.
 
 The following environment variables configure a beta publication when a
 hardware-specific track needs different bounds or release notes:
@@ -143,9 +120,8 @@ PRESENTATION
 MINIMUM_HARDWARE_VERSION
 MAXIMUM_HARDWARE_VERSION
 MINIMUM_CURRENT_FIRMWARE_VERSION
-RELEASE_NOTES
 STARBASE_DIR
 ```
 
-The beta profile is intentionally unsigned until field provisioning moves to
-secure boot.
+SmartBroom beta OTA images are signed with the production Secure Boot key so
+they can install on production-provisioned hardware.
