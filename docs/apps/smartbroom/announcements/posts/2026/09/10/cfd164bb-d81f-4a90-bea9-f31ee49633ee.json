@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "cfd164bb-d81f-4a90-bea9-f31ee49633ee",
+  "appId": "smartbroom",
+  "publishedAt": "2026-09-10T19:00:00Z",
+  "severity": "info",
+  "title": "Explore SmartBroom",
+  "body": "## See what SmartBroom can do\n\nVisit Curling Tools to learn more about SmartBroom and the tools we make for curlers.",
+  "action": {
+    "title": "Visit SmartBroom",
+    "url": "https://curling.tools/smartbroom"
+  }
+}

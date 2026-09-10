@@ -97,6 +97,20 @@ Each post is the complete, durable record:
 }
 ```
 
+`action` is optional. When present, it has this shape:
+
+```json
+{
+  "title": "Visit SmartBroom",
+  "url": "https://curling.tools/smartbroom"
+}
+```
+
+`title` is the button label shown beneath the post's Markdown body. `url` must
+be an absolute HTTPS URL; clients reject posts whose action URL is missing a
+host or uses another scheme. Actions open as an external link. App deep links
+are not part of the announcement action contract.
+
 `id` is a UUID and is the announcement's permanent identity. A post's path is
 derived from its immutable `publishedAt` date in UTC, making the archive easy
 to browse chronologically. Never change or remove a published post. To correct
@@ -106,9 +120,9 @@ delivered.
 The publisher must refuse to overwrite an existing post path or UUID.
 
 Clients validate the index and each post's schema, app ID, UUID, and relative
-URL before displaying it. They persist read state locally by UUID. Removing an
-entry from the index stops new delivery but does not invalidate a post already
-read by a client.
+URL before displaying it. They persist read state by UUID through the app's
+iCloud key-value store. Removing an entry from the index stops new delivery but
+does not invalidate a post already read by a client.
 
 ## Manifest model
 
