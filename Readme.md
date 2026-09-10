@@ -33,6 +33,26 @@ name. Current product IDs are SmartBroom `3.2`, LightBroom `5.1`, and SmartBeam
 Firmware images are immutable once published. A corrected or new build must
 use a new version directory; do not replace an existing image or its checksum.
 
+### Deactivated serial numbers
+
+`/products/<product-id>/blacklist-serial-numbers.json` contains the serial
+numbers deactivated for that exact device product ID. Clients may restrict a
+device only after successfully fetching and validating the manifest:
+
+```json
+{
+  "schemaVersion": 1,
+  "productId": "3.2",
+  "serialNumbers": [
+    "202607-1"
+  ]
+}
+```
+
+`serialNumbers` contains canonical serial strings exactly as reported by the
+device. A request, schema, or product-ID validation failure must not deactivate
+a device.
+
 ## App announcements
 
 Announcements are scoped to an app (or product family), rather than to an
