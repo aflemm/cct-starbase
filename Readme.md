@@ -43,17 +43,19 @@ device only after successfully fetching and validating the manifest:
 {
   "schemaVersion": 1,
   "productId": "3.2",
-  "serialNumbers": [
+  "entries": [
     {
       "year": 2026,
       "month": 7,
-      "unit": 1
+      "unit": 1,
+      "message": "This SmartBroom has been deactivated. Please contact us at curling@smartbroom.ca for assistance."
     }
   ]
 }
 ```
 
-Each `serialNumbers` entry stores the numeric components reported by the device.
+Each `entries` item stores the numeric components reported by the device. Its
+optional `message` is shown to the user if that device is deactivated.
 Clients must compare `year`, `month`, and `unit` numerically; they must not
 match a formatted serial string. A request, schema, or product-ID validation
 failure must not deactivate a device.

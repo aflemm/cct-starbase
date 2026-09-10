@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "productId": "3.2",
-  "serialNumbers": [
+  "entries": [
     {
       "year": 2026,
       "month": 7,
-      "unit": 1
+      "unit": 1,
+      "message": "This SmartBroom has been deactivated. Please contact us at curling@smartbroom.ca for assistance."
     }
   ]
 }
