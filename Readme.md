@@ -73,7 +73,7 @@ pointer to release after approval:
   "announcements": [
     {
       "id": "0198b8e3-54e4-7d8d-9f81-55e6c6b77501",
-      "url": "../../posts/2026/09/10/0198b8e3-54e4-7d8d-9f81-55e6c6b77501.json"
+      "url": "../posts/2026/09/10/0198b8e3-54e4-7d8d-9f81-55e6c6b77501.json"
     }
   ]
 }
