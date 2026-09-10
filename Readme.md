@@ -44,14 +44,19 @@ device only after successfully fetching and validating the manifest:
   "schemaVersion": 1,
   "productId": "3.2",
   "serialNumbers": [
-    "202607-1"
+    {
+      "year": 2026,
+      "month": 7,
+      "unit": 1
+    }
   ]
 }
 ```
 
-`serialNumbers` contains canonical serial strings exactly as reported by the
-device. A request, schema, or product-ID validation failure must not deactivate
-a device.
+Each `serialNumbers` entry stores the numeric components reported by the device.
+Clients must compare `year`, `month`, and `unit` numerically; they must not
+match a formatted serial string. A request, schema, or product-ID validation
+failure must not deactivate a device.
 
 ## App announcements
 

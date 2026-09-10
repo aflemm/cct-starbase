@@ -2,6 +2,10 @@
   "schemaVersion": 1,
   "productId": "3.1",
   "serialNumbers": [
-    "202412-49"
+    {
+      "year": 2024,
+      "month": 12,
+      "unit": 49
+    }
   ]
 }
