@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "0198aa61-9834-7f30-9e8d-7bc427849b03",
+  "appId": "smartbroom",
+  "publishedAt": "2026-09-08T14:00:00Z",
+  "severity": "info",
+  "title": "Welcome to SmartBroom Voyager",
+  "body": "## Thanks for being here\n\nSmartBroom Voyager helps you connect to your broom, review your sweeping data, and keep your equipment current."
+}

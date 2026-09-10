@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "0198b1aa-2f98-7885-8b1c-4cf5a6784a02",
+  "appId": "smartbroom",
+  "publishedAt": "2026-09-09T16:30:00Z",
+  "severity": "info",
+  "title": "Firmware updates live in Starbase",
+  "body": "## A better update path\n\nCompatible firmware releases are available directly from Starbase when your SmartBroom is connected.\n\nOpen your device, then choose **Firmware Update** to review an available update before installing it."
+}

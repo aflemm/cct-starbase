@@ -1,11 +1,12 @@
 # CCT Starbase
 
-Starbase is the public, static firmware distribution service for Curling Tools products. GitHub Pages serves the [`docs`](docs) directory at
+Starbase is the public, static distribution service for Curling Tools products
+and apps. GitHub Pages serves the [`docs`](docs) directory at
 `https://starbase.curling.tools`.
 
 ## Repository layout
 
-Each product has a self-contained subtree below `docs/products`:
+Firmware is scoped to the exact stable product ID reported by a device:
 
 ```text
 docs/
@@ -31,6 +32,83 @@ name. Current product IDs are SmartBroom `3.2`, LightBroom `5.1`, and SmartBeam
 
 Firmware images are immutable once published. A corrected or new build must
 use a new version directory; do not replace an existing image or its checksum.
+
+## App announcements
+
+Announcements are scoped to an app (or product family), rather than to an
+exact hardware product ID. For example, the SmartBroom app supports both 3.1
+and 3.2 SmartBrooms, so it reads one common announcements feed even though
+only 3.2 firmware is distributed here. The initial app IDs are `smartbroom`
+and `smartbeam`.
+
+```text
+docs/
+└── apps/
+    └── <app-id>/
+        └── announcements/
+            ├── channels/
+            │   ├── beta.json
+            │   └── release.json
+            └── posts/
+                └── YYYY/MM/DD/
+                    └── <announcement-uuid>.json
+```
+
+The app fetches one channel index:
+
+```text
+/apps/<app-id>/announcements/channels/<channel>.json
+```
+
+The mutable channel index is only a list of currently deliverable post
+identities and relative URLs. It intentionally does not duplicate announcement
+content. Internal builds use `beta`; external builds use `release`. A post is
+tested by adding it to the beta index first, then promoted by adding the same
+pointer to release after approval:
+
+```json
+{
+  "schemaVersion": 1,
+  "appId": "smartbroom",
+  "announcements": [
+    {
+      "id": "0198b8e3-54e4-7d8d-9f81-55e6c6b77501",
+      "url": "../../posts/2026/09/10/0198b8e3-54e4-7d8d-9f81-55e6c6b77501.json"
+    }
+  ]
+}
+```
+
+Each post is the complete, durable record:
+
+```json
+{
+  "schemaVersion": 1,
+  "id": "0198b8e3-54e4-7d8d-9f81-55e6c6b77501",
+  "appId": "smartbroom",
+  "publishedAt": "2026-09-10T18:00:00Z",
+  "severity": "info",
+  "title": "SmartBroom announcements are here",
+  "body": "## Keep up with SmartBroom\\n\\nThis is an in-app announcement.",
+  "action": {
+    "title": "Learn more",
+    "url": "https://curling.tools/pages/smartbroom"
+  }
+}
+```
+
+`id` is a UUID and is the announcement's permanent identity. A post's path is
+derived from its immutable `publishedAt` date in UTC, making the archive easy
+to browse chronologically. Never change or remove a published post. To correct
+one, publish a new UUID (optionally with a future `supersedes` field) and
+remove the previous entry from the channel index when it should no longer be
+delivered.
+The publisher must refuse to overwrite an existing post path or UUID.
+
+Clients validate the index and each post's schema, app ID, UUID, and relative
+URL before displaying it. They persist read state locally by UUID. Removing an
+entry from the index stops new delivery but does not invalidate a post already
+read by a client.
 
 ## Manifest model
 
