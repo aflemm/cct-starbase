@@ -8,7 +8,7 @@
       "id": "smartbroom",
       "rows": [
         { "id": "about-smartbroom", "type": "link", "title": "About SmartBroom", "systemImage": "info.circle", "url": "https://curling.tools/pages/smartbroom" },
-        { "id": "buy-smartbroom", "type": "link", "title": "Buy a SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom-3" }
+        { "id": "buy-smartbroom", "type": "link", "title": "Buy a SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom" }
       ]
     },
     {
