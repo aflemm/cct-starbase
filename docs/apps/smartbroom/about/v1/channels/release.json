@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "appId": "smartbroom",
+  "revision": 1,
+  "updatedAt": "2026-09-11T17:00:00Z",
+  "sections": [
+    {
+      "id": "smartbroom",
+      "rows": [
+        { "id": "about-smartbroom", "type": "link", "title": "About SmartBroom", "systemImage": "info.circle", "url": "https://curling.tools/pages/smartbroom" },
+        { "id": "buy-smartbroom", "type": "link", "title": "Buy a SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom-3" }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Contact us",
+      "footer": "If you need some help, have a suggestion, or want to talk about our products, please send an email.",
+      "rows": [
+        { "id": "email", "type": "link", "title": "curling@smartbroom.ca", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" }
+      ]
+    },
+    {
+      "id": "other-products",
+      "title": "Other products",
+      "rows": [
+        { "id": "smartbeam", "type": "detailLink", "title": "SmartBeam", "detail": "Laser split timers you're going to love", "url": "https://curling.tools/smartbeam" },
+        { "id": "corebroom", "type": "detailLink", "title": "CoreBroom", "detail": "The best broom in curling, and a fair price for sleeves", "url": "https://curling.tools/corebroom" },
+        { "id": "lightbroom", "type": "detailLink", "title": "LightBroom", "detail": "The world's most fun curling broom", "url": "https://curling.tools/lightbroom" },
+        { "id": "curlbook", "type": "detailLink", "title": "CurlBook", "detail": "The best analytics for curling teams", "url": "https://curlbook.ca" }
+      ]
+    },
+    {
+      "id": "legal",
+      "rows": [
+        { "id": "privacy-policy", "type": "link", "title": "Privacy Policy", "systemImage": "hand.raised.fill", "url": "https://curling.tools/pages/privacy" },
+        { "id": "license-agreement", "type": "link", "title": "License Agreement", "systemImage": "doc.text", "url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" }
+      ]
+    }
+  ]
+}
