@@ -21,6 +21,20 @@ offered candidate; it has no `latest` field. The app validates the manifest,
 filters it for its connected device's hardware and installed firmware, and
 selects the newest eligible candidate.
 
+Each release has a required `presentation` field:
+
+- `automatic` makes a compatible update available when the device connects.
+- `manual` makes it available only when the user explicitly checks for updates.
+
+An optional `urgency` field controls the presentation of an automatic update:
+
+- Omit it, or use `normal`, for ordinary update availability.
+- Use `high` to show an update-available alert. Choosing **Not Now** defers
+  the next alert for at least 24 hours for that device and release version.
+
+Urgency never installs firmware without the user's confirmation. `high` is
+valid only with `presentation: "automatic"`.
+
 ```json
 {
   "schemaVersion": 1,
@@ -32,6 +46,7 @@ selects the newest eligible candidate.
       "version": "1.0.812",
       "publishedAt": "2026-09-07T17:51:09Z",
       "presentation": "automatic",
+      "urgency": "high",
       "compatibility": {
         "minimumHardwareVersion": "0.2",
         "maximumHardwareVersion": "1.0",

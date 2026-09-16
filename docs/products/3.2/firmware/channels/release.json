@@ -37,6 +37,24 @@
         "sha256": "b53a7cd14ee71db702add8b2e6aa73bf945ed860bfd8694c4b8d04477e129fd4"
       },
       "releaseNotes": "## SmartBroom 1.1.0\n\n- Improves reliability when turning off SmartBroom while connected to USB power."
+    },
+    {
+      "version": "1.2.0",
+      "channel": "release",
+      "publishedAt": "2026-09-16T00:13:24Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.0",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.2.0/SmartBroom_OTA-1.2.0.bin",
+        "size": 790528,
+        "sha256": "88b9758879f0d28ea63a03d48e90225a04e32a8f300f72974cca7fbd6fa318dd"
+      },
+      "releaseNotes": "## SmartBroom 1.2.0\n\nThis update improves the accuracy of sweep frequency directly following a plow.",
+      "urgency": "high"
     }
   ]
 }
