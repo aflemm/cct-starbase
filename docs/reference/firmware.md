@@ -29,8 +29,9 @@ Each release has a required `presentation` field:
 An optional `urgency` field controls the presentation of an automatic update:
 
 - Omit it, or use `normal`, for ordinary update availability.
-- Use `high` to show an update-available alert. Choosing **Not Now** defers
-  the next alert for at least 24 hours for that device and release version.
+- Use `high` to show an update-available alert once during each device
+  connection. Choosing **Not Now** dismisses the alert until that device is
+  disconnected and connected again.
 
 Urgency never installs firmware without the user's confirmation. `high` is
 valid only with `presentation: "automatic"`.
