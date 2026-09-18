@@ -21,3 +21,10 @@ devices for one exact hardware product ID.
 Clients compare `year`, `month`, and `unit` numerically. A failed request,
 schema validation failure, or product-ID mismatch must never deactivate a
 device.
+
+## Reserved product IDs
+
+Product IDs `2.1` and `2.2` are reserved for SmartBroom and have no units.
+Their empty manifests are published now so clients can validate the product-ID
+contract before a unit is allocated. Add an entry only when a unit for that
+exact product ID has been allocated and must be deactivated.
