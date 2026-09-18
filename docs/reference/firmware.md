@@ -4,7 +4,7 @@ Firmware is scoped to the exact stable product ID reported by a device. Current
 product IDs include SmartBroom `3.2`, LightBroom `5.1`, and SmartBeam `4.1`.
 
 ```text
-products/<product-id>/firmware/
+v1/products/<product-id>/firmware/
 ├── channels/
 │   ├── beta.json
 │   └── release.json
@@ -14,7 +14,7 @@ products/<product-id>/firmware/
 ```
 
 For example, SmartBroom's beta endpoint is
-`/products/3.2/firmware/channels/beta.json`.
+`/v1/products/3.2/firmware/channels/beta.json`.
 
 All manifests use `schemaVersion: 1`. A channel exposes every currently
 offered candidate; it has no `latest` field. The app validates the manifest,

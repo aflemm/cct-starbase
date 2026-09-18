@@ -4,7 +4,7 @@ Announcements are scoped to an app rather than a hardware product ID. Internal
 builds read `beta`; external builds read `release`.
 
 ```text
-apps/<app-id>/announcements/
+v1/apps/<app-id>/announcements/
 ├── channels/
 │   ├── beta.json
 │   └── release.json

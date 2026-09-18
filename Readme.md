@@ -1,8 +1,9 @@
-# CCT Subspace
+# CCT Starbase
 
-Subspace is the public, static distribution service for Curling Tools products
+Starbase is the public, static distribution service in the Subspace transport
+layer for Curling Tools products
 and apps. GitHub Pages serves the [`docs`](docs) directory at
-`https://subspace.curling.tools`.
+`https://starbase.subspace.curling.tools`.
 
 It distributes public content only. Clients must validate every downloaded
 document and retain a safe local fallback when a request or validation fails.
@@ -22,15 +23,16 @@ document and retain a safe local fallback when a request or validation fails.
 
 ```text
 docs/
-├── apps/
-│   └── <app-id>/
-│       ├── announcements/
-│       └── about/
-│           └── v<contract-version>/
-└── products/
-    └── <product-id>/
-        ├── blacklist-serial-numbers.json
-        └── firmware/
+└── v1/
+    ├── apps/
+    │   └── <app-id>/
+    │       ├── announcements/
+    │       └── about/
+    │           └── v<contract-version>/
+    └── products/
+        └── <product-id>/
+            ├── blacklist-serial-numbers.json
+            └── firmware/
 ```
 
 App content is scoped to an app or product family. Firmware and deactivation

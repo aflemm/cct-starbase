@@ -1,6 +1,6 @@
 # Deactivated serial numbers
 
-`/products/<product-id>/blacklist-serial-numbers.json` contains deactivated
+`/v1/products/<product-id>/blacklist-serial-numbers.json` contains deactivated
 devices for one exact hardware product ID.
 
 ```json

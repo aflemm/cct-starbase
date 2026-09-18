@@ -9,8 +9,8 @@ announcements, app version information, and any internal-only tools.
 The contract version is part of the endpoint:
 
 ```text
-/apps/<app-id>/about/v1/channels/beta.json
-/apps/<app-id>/about/v1/channels/release.json
+/v1/apps/<app-id>/about/v1/channels/beta.json
+/v1/apps/<app-id>/about/v1/channels/release.json
 ```
 
 Each app bundles a valid manifest for the contract version it supports. It uses
