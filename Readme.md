@@ -44,8 +44,10 @@ not infer a product ID from a product name.
 
 Review a changed document against its concern contract before committing it.
 Published firmware images and announcement posts are immutable; their channel
-indices and mutable About manifests are not. Publish CCT-internal content to
-alpha, external-beta content to beta, and production content to release.
+indices and mutable About manifests are not. Firmware and announcements are
+additive: publish CCT-internal-only content to alpha, external-beta content to
+beta, and production content to release. About content remains one complete
+manifest per selected channel.
 
 For SmartBroom firmware beta publication, create the OTA artifact with
 `tools/package_smartbroom_beta_release.sh`, publish it with

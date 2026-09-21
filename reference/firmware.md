@@ -14,9 +14,12 @@ v1/products/<product-id>/firmware/
     └── SHA256SUMS
 ```
 
-The channels map directly to app distribution: `alpha` for CCT-internal,
-`beta` for external-beta, and `release` for external-release. For example,
-SmartBroom's alpha endpoint is `/v1/products/3.2/firmware/channels/alpha.json`.
+Firmware channels are additive: external-release builds read `release`,
+external-beta builds combine `release` and `beta`, and CCT-internal builds
+combine `release`, `beta`, and `alpha`. Publish a release only to its most
+specific channel; do not copy candidates into less-specific channels. For
+example, SmartBroom's alpha endpoint is
+`/v1/products/3.2/firmware/channels/alpha.json`.
 
 All manifests use `schemaVersion: 1`. A channel exposes every currently
 offered candidate; it has no `latest` field. The app validates the manifest,
