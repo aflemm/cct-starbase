@@ -11,6 +11,7 @@ The contract version is part of the endpoint:
 ```text
 /v1/apps/<app-id>/about/v1/channels/beta.json
 /v1/apps/<app-id>/about/v1/channels/release.json
+/v1/apps/<app-id>/about/v1/channels/alpha.json
 ```
 
 Each app bundles a valid manifest for the contract version it supports. It uses
@@ -18,11 +19,13 @@ a previously validated cached response when one exists; otherwise it uses the
 bundled content. It only replaces either with a complete, validated remote
 manifest.
 
+Channel selection is a hard mapping: CCT-internal builds use `alpha`,
+external-beta builds use `beta`, and external-release builds use `release`.
+
 Within a contract version, publishers may change copy, destinations, section
-order, and rows using already defined types. They must not add a new row type
-or change existing type semantics. A new capability requires a new endpoint
-version (for example, `v2`) and an app release that bundles and fetches it.
-Older installs remain on their existing contract endpoint.
+order, and rows using already defined types. Clients reject an entire remote
+document with unknown types, duplicate IDs, invalid URLs, unsupported schemas,
+or invalid app IDs, and keep their last known valid content.
 
 ## V1 document
 
@@ -60,10 +63,9 @@ identifiers. A document must contain at least one section and one row.
   `systemImage` is optional.
 - `detailLink`: an external `https` or `mailto` link with a subtitle. Requires
   `title`, `detail`, and `url`.
+- `webLink`: an `https` destination that opens in an in-app browser. Requires
+  `title` and `url`; `systemImage` is optional.
 - `text`: non-interactive information. Requires `title`; `detail` and
   `systemImage` are optional.
 
-Sections may have optional `title` and `footer`. URLs are always opened
-externally. Clients reject an entire remote document with unknown types,
-duplicate IDs, invalid URLs, unsupported schemas, or invalid app IDs, and keep
-their last known valid content.
+Sections may have optional `title` and `footer`.

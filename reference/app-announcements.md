@@ -1,11 +1,13 @@
 # App announcements
 
-Announcements are scoped to an app rather than a hardware product ID. Internal
-builds read `beta`; external builds read `release`.
+Announcements are scoped to an app rather than a hardware product ID.
+CCT-internal builds read `alpha`, external-beta builds read `beta`, and
+external-release builds read `release`.
 
 ```text
 v1/apps/<app-id>/announcements/
 ├── channels/
+│   ├── alpha.json
 │   ├── beta.json
 │   └── release.json
 └── posts/YYYY/MM/DD/<announcement-uuid>.json

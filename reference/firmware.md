@@ -6,6 +6,7 @@ product IDs include SmartBroom `3.2`, LightBroom `5.1`, and SmartBeam `4.1`.
 ```text
 v1/products/<product-id>/firmware/
 ├── channels/
+│   ├── alpha.json
 │   ├── beta.json
 │   └── release.json
 └── releases/<version>/
@@ -13,8 +14,9 @@ v1/products/<product-id>/firmware/
     └── SHA256SUMS
 ```
 
-For example, SmartBroom's beta endpoint is
-`/v1/products/3.2/firmware/channels/beta.json`.
+The channels map directly to app distribution: `alpha` for CCT-internal,
+`beta` for external-beta, and `release` for external-release. For example,
+SmartBroom's alpha endpoint is `/v1/products/3.2/firmware/channels/alpha.json`.
 
 All manifests use `schemaVersion: 1`. A channel exposes every currently
 offered candidate; it has no `latest` field. The app validates the manifest,
