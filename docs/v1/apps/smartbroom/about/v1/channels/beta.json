@@ -1,14 +1,15 @@
 {
   "schemaVersion": 1,
   "appId": "smartbroom",
-  "revision": 1,
-  "updatedAt": "2026-09-11T17:00:00Z",
+  "revision": 2,
+  "updatedAt": "2026-09-21T08:00:00Z",
   "sections": [
     {
       "id": "smartbroom",
       "rows": [
         { "id": "about-smartbroom", "type": "link", "title": "About SmartBroom", "systemImage": "info.circle", "url": "https://curling.tools/pages/smartbroom" },
-        { "id": "buy-smartbroom", "type": "link", "title": "Buy a SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom" }
+        { "id": "buy-smartbroom", "type": "link", "title": "Buy a SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom" },
+        { "id": "subscribe-updates", "type": "webLink", "title": "Subscribe to Updates", "systemImage": "envelope.badge", "url": "https://curling.tools/pages/newsletter-signup" }
       ]
     },
     {
