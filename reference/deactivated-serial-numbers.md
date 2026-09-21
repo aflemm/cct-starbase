@@ -24,7 +24,8 @@ device.
 
 ## Reserved product IDs
 
-Product IDs `2.1` and `2.2` are reserved for SmartBroom and have no units.
-Their empty manifests are published now so clients can validate the product-ID
-contract before a unit is allocated. Add an entry only when a unit for that
-exact product ID has been allocated and must be deactivated.
+Product ID `2.0` is reserved for TNG-era SmartBroom hardware and has no units
+yet. TNG hardware does not report a product ID, so clients identify its TNG
+calibration service and use `2.0` for deactivation checks. Its empty manifest
+is published now so clients can validate that contract before a unit is
+allocated. Add an entry only when a TNG unit must be deactivated.

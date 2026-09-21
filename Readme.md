@@ -37,8 +37,10 @@ docs/
 ```
 
 App content is scoped to an app or product family. Firmware and deactivation
-manifests are scoped to the exact stable product ID reported by a device. Do
-not infer a product ID from a product name.
+manifests are scoped to the exact stable product ID reported by a device. The
+sole exception is TNG-era SmartBroom hardware, which does not report a product
+ID: clients identify its TNG calibration service and use the stable `2.0`
+product ID for deactivation checks.
 
 ## Publishing
 
