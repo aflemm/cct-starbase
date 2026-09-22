@@ -1,5 +1,10 @@
 {
   "schemaVersion": 1,
   "appId": "smartbroom",
-  "announcements": []
+  "announcements": [
+    {
+      "id": "a3ccd2e1-aebd-4d77-affe-4297f0899fec",
+      "url": "../posts/2026/09/22/a3ccd2e1-aebd-4d77-affe-4297f0899fec.json"
+    }
+  ]
 }
