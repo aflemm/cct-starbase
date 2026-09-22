@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "44f355d2-5d18-4d5e-8339-b668c0b9a850",
+  "appId": "smartbroom",
+  "publishedAt": "2026-09-22T10:47:36Z",
+  "severity": "info",
+  "title": "SmartBroom 2026.9",
+  "body": "# A Whole New SmartBroom App\n\nWelcome to v2026.9, we're delighted you could join us! For this year the app is fully rebuilt from the ground up with a huge number of exciting enhancements. This new foundation will enable much more in the future, so stay tuned for more updates throughout the season.\n\n### All New for SmartBroom 4\n- Background sweep data capture and bulk download\n- Database for sweep data synced through iCloud\n- Sweeper database with sweep history\n- 'Me' sweeper\n- All new raw live data mode\n- Sweeps grouped into sessions (practice or game)\n- Sweeps broken into intervals (for gaps in a single sweep)\n- Stroke-by-stroke measurement and display\n- Plow stroke detection\n\n### Improvements For Older SmartBrooms\n- SmartBroom 2 or 3 .csv sweep files can be imported into the synced database and assigned to sweepers\n- Imported sweeps sync through iCloud\n- New live sweeps use the sweeper database",
+  "appVersionRange": {
+    "minimumInclusive": "2026.9",
+    "maximumExclusive": "2026.10"
+  }
+}
