@@ -1,23 +1,22 @@
 {
   "schemaVersion": 1,
   "appId": "smartbroom",
-  "revision": 2,
-  "updatedAt": "2026-09-21T08:00:00Z",
+  "revision": 3,
+  "updatedAt": "2026-09-22T19:40:00Z",
   "sections": [
     {
-      "id": "smartbroom",
+      "id": "subscribe",
       "rows": [
-        { "id": "about-smartbroom", "type": "link", "title": "About SmartBroom", "systemImage": "info.circle", "url": "https://curling.tools/pages/smartbroom" },
-        { "id": "buy-smartbroom", "type": "link", "title": "Buy a SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom" },
         { "id": "subscribe-updates", "type": "webLink", "title": "Subscribe to Updates", "systemImage": "envelope.badge", "url": "https://curling.tools/pages/newsletter-signup" }
       ]
     },
     {
-      "id": "contact",
-      "title": "Contact us",
+      "id": "curling-tools",
+      "title": "Curling Tools",
       "footer": "If you need some help, have a suggestion, or want to talk about our products, please send an email.",
       "rows": [
-        { "id": "email", "type": "link", "title": "curling@smartbroom.ca", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" }
+        { "id": "contact-us", "type": "link", "title": "Contact Us", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" },
+        { "id": "buy-smartbroom", "type": "link", "title": "Buy a SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom" }
       ]
     },
     {
