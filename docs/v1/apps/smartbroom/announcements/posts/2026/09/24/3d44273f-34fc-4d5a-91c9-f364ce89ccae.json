@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "3d44273f-34fc-4d5a-91c9-f364ce89ccae",
+  "appId": "smartbroom",
+  "publishedAt": "2026-09-24T19:02:31Z",
+  "severity": "info",
+  "title": "SmartBroom 4 is Here!",
+  "body": "## Background Data, All The Time\nWe've taken SmartBroom to the next level. With background sweep monitoring you no longer need to have bluetooth connected to collect data. You can now measure your sweeping performance through **real games** more easily than ever!\n\n## Other refinements\n- Saves each individual stroke (push/pull) instead of time-averaged values\n- Detects and saves plowing as its own stroke-type\n- Over 5x improvement in sensitivity of force sensors (compared to SmartBroom 3)\n- Up to 3x improvement in battery life for in-game capture (compared to SmartBroom 3)\n- More accurate battery state of charge estimation\n- Auto-sleep and shake-to-wake",
+  "action": {
+    "title": "Shop SmartBroom 4",
+    "url": "https://curling.tools/products/smartbroom-4"
+  }
+}
