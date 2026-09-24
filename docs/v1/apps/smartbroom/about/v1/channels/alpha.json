@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "appId": "smartbroom",
-  "revision": 8,
-  "updatedAt": "2026-09-24T19:00:07Z",
+  "revision": 9,
+  "updatedAt": "2026-09-24T19:13:07Z",
   "sections": [
     {
       "id": "shop",
       "rows": [
+        { "id": "shop-smartbroom", "type": "link", "title": "Shop SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom" },
         { "id": "shop-sleeves", "type": "link", "title": "Order Sleeves", "systemImage": "cart", "url": "https://curling.tools/products/pad-sleeves-recreational-10-pack?variant=44018633769142" }
       ]
     },

@@ -1,27 +1,33 @@
 {
   "schemaVersion": 1,
   "appId": "smartbroom",
-  "revision": 3,
-  "updatedAt": "2026-09-22T19:40:00Z",
+  "revision": 9,
+  "updatedAt": "2026-09-24T19:13:07Z",
   "sections": [
     {
+      "id": "shop",
+      "rows": [
+        { "id": "shop-smartbroom", "type": "link", "title": "Shop SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom" },
+        { "id": "shop-sleeves", "type": "link", "title": "Order Sleeves", "systemImage": "cart", "url": "https://curling.tools/products/pad-sleeves-recreational-10-pack?variant=44018633769142" }
+      ]
+    },
+    {
       "id": "subscribe",
+      "footer": "Stay up to date on product announcements, promotions, updates, and other Curling Tools news. We promise not to spam you, or sell your data to advertisers.",
       "rows": [
         { "id": "subscribe-updates", "type": "webLink", "title": "Subscribe to Updates", "systemImage": "envelope.badge", "url": "https://curling.tools/pages/newsletter-signup" }
       ]
     },
     {
-      "id": "curling-tools",
-      "title": "Curling Tools",
+      "id": "contact-us",
       "footer": "If you need some help, have a suggestion, or want to talk about our products, please send an email.",
       "rows": [
-        { "id": "contact-us", "type": "link", "title": "Contact Us", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" },
-        { "id": "buy-smartbroom", "type": "link", "title": "Buy a SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom" }
+        { "id": "contact-us", "type": "link", "title": "Contact Us", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" }
       ]
     },
     {
       "id": "other-products",
-      "title": "Other products",
+      "title": "Our Other Products",
       "rows": [
         { "id": "smartbeam", "type": "detailLink", "title": "SmartBeam", "detail": "Laser split timers you're going to love", "url": "https://curling.tools/smartbeam" },
         { "id": "corebroom", "type": "detailLink", "title": "CoreBroom", "detail": "The best broom in curling, and a fair price for sleeves", "url": "https://curling.tools/corebroom" },
