@@ -7,7 +7,7 @@
     {
       "id": "shop",
       "rows": [
-        { "id": "shop-smartbroom", "type": "link", "title": "Shop SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom" }
+        { "id": "shop-sleeves", "type": "link", "title": "Order Sleeves", "systemImage": "cart", "url": "https://curling.tools/products/pad-sleeves-recreational-10-pack?variant=44018633769142" }
       ]
     },
     {
@@ -32,15 +32,6 @@
         { "id": "corebroom", "type": "detailLink", "title": "CoreBroom", "detail": "The best broom in curling, and a fair price for sleeves", "url": "https://curling.tools/corebroom" },
         { "id": "lightbroom", "type": "detailLink", "title": "LightBroom", "detail": "The world's most fun curling broom", "url": "https://curling.tools/lightbroom" },
         { "id": "curlbook", "type": "detailLink", "title": "CurlBook", "detail": "The best analytics for curling teams", "url": "https://curlbook.ca" }
-      ]
-    },
-    {
-      "id": "about-us",
-      "title": "Curling Tools",
-      "footer": "If you need some help, have a suggestion, or want to talk about our products, please send an email.",
-      "rows": [
-        { "id": "about-curling-tools", "type": "text", "title": "Canadian Curling Tools Ltd. is a curling equipment and technology company founded and operated by Geoff Fowler, Andrew Flemming, and Will Hamilton."},
-        { "id": "contact-us", "type": "link", "title": "Contact Us", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" }
       ]
     },
     {
