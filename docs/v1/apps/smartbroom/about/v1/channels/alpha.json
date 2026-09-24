@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "appId": "smartbroom",
-  "revision": 3,
-  "updatedAt": "2026-09-21T21:30:00Z",
+  "revision": 4,
+  "updatedAt": "2026-09-24T18:14:32Z",
   "sections": [
     {
       "id": "subscribe",
+      "footer": "Stay up to date on product announcements, promotions, updates, and other Curling Tools news. We promise not to spam you, or sell your data to advertisers.",
       "rows": [
         { "id": "subscribe-updates", "type": "webLink", "title": "Subscribe to Updates", "systemImage": "envelope.badge", "url": "https://curling.tools/pages/newsletter-signup" }
       ]
