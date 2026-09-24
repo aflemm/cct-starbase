@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "614ba2dd-ca11-4c17-bfe9-7238d68611b4",
+  "appId": "smartbroom",
+  "publishedAt": "2026-09-24T17:19:25Z",
+  "severity": "info",
+  "title": "SmartBroom 2026.10",
+  "body": "- Fixed a first-launch timing issue with bluetooth permission requests\n- Improved CSV generation performance\n- Improved CloudKit reliability",
+  "appVersionRange": {
+    "minimumInclusive": "2026.10",
+    "maximumExclusive": "2026.11"
+  }
+}
