@@ -1,9 +1,15 @@
 {
   "schemaVersion": 1,
   "appId": "smartbroom",
-  "revision": 4,
-  "updatedAt": "2026-09-24T18:14:32Z",
+  "revision": 5,
+  "updatedAt": "2026-09-24T18:31:32Z",
   "sections": [
+    {
+      "id": "shop",
+      "rows": [
+        { "id": "shop-smartbroom", "type": "link", "title": "Shop SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom" },
+      ]
+    },
     {
       "id": "subscribe",
       "footer": "Stay up to date on product announcements, promotions, updates, and other Curling Tools news. We promise not to spam you, or sell your data to advertisers.",
@@ -12,17 +18,15 @@
       ]
     },
     {
-      "id": "curling-tools",
-      "title": "Curling Tools",
+      "id": "contact-us",
       "footer": "If you need some help, have a suggestion, or want to talk about our products, please send an email.",
       "rows": [
-        { "id": "contact-us", "type": "link", "title": "Contact Us", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" },
-        { "id": "buy-smartbroom", "type": "link", "title": "Buy a SmartBroom", "systemImage": "cart", "url": "https://curling.tools/products/smartbroom" }
+        { "id": "contact-us", "type": "link", "title": "Contact Us", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" }
       ]
     },
     {
       "id": "other-products",
-      "title": "Other products",
+      "title": "Our Other Products",
       "rows": [
         { "id": "smartbeam", "type": "detailLink", "title": "SmartBeam", "detail": "Laser split timers you're going to love", "url": "https://curling.tools/smartbeam" },
         { "id": "corebroom", "type": "detailLink", "title": "CoreBroom", "detail": "The best broom in curling, and a fair price for sleeves", "url": "https://curling.tools/corebroom" },
