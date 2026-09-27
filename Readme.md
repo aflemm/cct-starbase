@@ -69,3 +69,10 @@ For SmartBroom firmware beta publication, create the OTA artifact with
 `tools/package_smartbroom_beta_release.sh`, publish it with
 `tools/publish_smartbroom_beta.sh`, then review and commit the immutable
 release directory and beta channel manifest together.
+
+The public root is deployed from the docs directory by
+[the Pages workflow](.github/workflows/deploy-pages.yml). On each production
+push, the workflow renders a deployment-only copy and sets the root page
+timestamp to that commit's committer time in UTC. It does not rewrite the source
+tree. Set the repository's Pages publishing source to GitHub Actions so this
+artifact workflow serves the public site.

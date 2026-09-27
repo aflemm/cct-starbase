@@ -1,0 +1,38 @@
+name: Deploy Starbase Pages
+
+on:
+  push:
+    branches:
+      - production
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: starbase-pages-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Check out production commit
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Render static site and commit timestamp
+        run: python3 tools/render_pages_site.py --commit "$GITHUB_SHA" --destination _site
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy GitHub Pages
+        uses: actions/deploy-pages@v4
