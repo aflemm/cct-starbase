@@ -42,6 +42,20 @@ sole exception is TNG-era SmartBroom hardware, which does not report a product
 ID: clients identify its TNG calibration service and use the stable `2.0`
 product ID for deactivation checks.
 
+## SmartBeam endpoints
+
+SmartBeam uses app ID `smartbeam` and hardware product ID `4.1`. Its firmware
+catalogues, announcement indices, and serial blacklist are provisioned at the
+standard v1 endpoints under `docs/v1`:
+
+- Firmware: `products/4.1/firmware/channels/{alpha,beta,release}.json`
+- Announcements: `apps/smartbeam/announcements/channels/{alpha,beta,release}.json`
+- Serial blacklist: `products/4.1/blacklist-serial-numbers.json`
+
+Keep each endpoint present even when its collection is empty. The 4.1 blacklist
+starts with no entries; add only serial numbers confirmed for deactivation.
+Firmware artifacts are immutable and referenced by the channel manifest.
+
 ## Publishing
 
 Review a changed document against its concern contract before committing it.
