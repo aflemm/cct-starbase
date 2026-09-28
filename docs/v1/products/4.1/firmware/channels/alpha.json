@@ -5,35 +5,19 @@
   "channel": "alpha",
   "releases": [
     {
-      "version": "1.2.1",
-      "publishedAt": "2026-09-28T15:39:25Z",
-      "presentation": "automatic",
-      "urgency": "high",
-      "compatibility": {
-        "minimumHardwareVersion": "0.0",
-        "minimumCurrentFirmwareVersion": "1.0.0"
-      },
-      "image": {
-        "url": "../releases/1.2.1/SmartBeam_OTA-1.2.1.bin",
-        "size": 663552,
-        "sha256": "de112649a1724bd816c7bd842a6b186af4b20d3ed16482fce7707c717f8c50a5"
-      },
-      "releaseNotes": "## SmartBeam alpha 1.2.1\n\n- During an OTA update, the two system LEDs alternate a dim purple indication every 600 ms, matching SmartBroom's firmware-transfer cue. The beam and battery LEDs keep their normal indications."
-    },
-    {
-      "version": "1.2.2",
-      "publishedAt": "2026-09-28T17:23:21Z",
+      "version": "1.2.101",
+      "publishedAt": "2026-09-28T18:36:00Z",
       "presentation": "automatic",
       "compatibility": {
         "minimumHardwareVersion": "0.0",
         "minimumCurrentFirmwareVersion": "1.0.0"
       },
       "image": {
-        "url": "../releases/1.2.2/SmartBeam_OTA-1.2.2.bin",
+        "url": "../releases/1.2.101/SmartBeam_OTA-1.2.101.bin",
         "size": 663552,
-        "sha256": "692f5c7a7e8f7edde720224808e1b05fa6c9ea9ef3add845a6a437084f538603"
+        "sha256": "a0e4cb9ba1e1552d66a7385d04637d0d7f8545bf83f89ef2d27adf75daca1d17"
       },
-      "releaseNotes": "## SmartBeam alpha 1.2.2\n\n- Rebuild of 1.2.1 for distribution testing; no firmware code changes."
+      "releaseNotes": "## SmartBeam alpha 1.2.101\n\n- BLE startup now reports NimBLE host task allocation failures instead of treating startup as successful.\n"
     }
   ]
 }
