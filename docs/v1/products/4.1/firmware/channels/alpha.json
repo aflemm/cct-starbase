@@ -24,7 +24,6 @@
       "version": "1.2.2",
       "publishedAt": "2026-09-28T17:23:21Z",
       "presentation": "automatic",
-      "urgency": "high",
       "compatibility": {
         "minimumHardwareVersion": "0.0",
         "minimumCurrentFirmwareVersion": "1.0.0"
