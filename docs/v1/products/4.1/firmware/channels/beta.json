@@ -5,6 +5,22 @@
   "channel": "beta",
   "releases": [
     {
+      "version": "1.2.101",
+      "channel": "beta",
+      "publishedAt": "2026-09-28T22:56:06Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.2.101/SmartBeam_OTA-1.2.101.bin",
+        "size": 663552,
+        "sha256": "a0e4cb9ba1e1552d66a7385d04637d0d7f8545bf83f89ef2d27adf75daca1d17"
+      },
+      "releaseNotes": "## SmartBeam beta 1.2.101\n\n- BLE startup now reports NimBLE host task allocation failures instead of treating startup as successful.\n"
+    },
+    {
       "version": "1.2.2",
       "publishedAt": "2026-09-28T17:23:21Z",
       "presentation": "automatic",
