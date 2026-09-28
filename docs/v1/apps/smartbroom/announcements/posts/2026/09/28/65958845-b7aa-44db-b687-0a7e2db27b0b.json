@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 2,
+  "id": "65958845-b7aa-44db-b687-0a7e2db27b0b",
+  "appId": "smartbroom",
+  "publishedAt": "2026-09-28T20:08:00Z",
+  "severity": "info",
+  "title": "SmartBroom 3.2 pre-1.3 firmware target test",
+  "body": "This alpha-only post tests targeting SmartBroom product 3.2 devices with firmware earlier than 1.3.0. No action is required.",
+  "audience": {
+    "type": "device",
+    "deviceTarget": {
+      "productIds": ["3.2"],
+      "firmwareVersionRange": { "maximumExclusive": "1.3.0" }
+    }
+  }
+}
