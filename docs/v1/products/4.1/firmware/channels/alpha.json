@@ -8,6 +8,7 @@
       "version": "1.2.1",
       "publishedAt": "2026-09-28T15:39:25Z",
       "presentation": "automatic",
+      "urgency": "high",
       "compatibility": {
         "minimumHardwareVersion": "0.0",
         "minimumCurrentFirmwareVersion": "1.0.0"

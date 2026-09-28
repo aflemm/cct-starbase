@@ -17,7 +17,7 @@
         "size": 659456,
         "sha256": "fafff65cf129d807c7763f97d1d3f9e7c342afe401411a5a6edb1a94ac022084"
       },
-      "releaseNotes": "## SmartBeam 1.1.0\n\n- Fixes a startup issue where the beam indication could incorrectly show established before the laser sensor settled. The startup indication now uses the initial sensor reading.\n- Confirms an OTA image only after BLE advertising and the OTA worker are ready, preserving rollback if startup is incomplete.\n- Production firmware is signed with Secure Boot V2 and uses release-mode flash-encryption provisioning."
+      "releaseNotes": "## SmartBeam 1.1.0\n\n- Fixes a startup issue where the beam indication could incorrectly show green before the beam has been established"
     }
   ]
 }
