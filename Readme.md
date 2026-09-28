@@ -15,8 +15,9 @@ document and retain a safe local fallback when a request or validation fails.
   cryptographically verified OTA releases.
 - [Deactivated serial numbers](reference/deactivated-serial-numbers.md) —
   hardware-specific device restriction manifests.
-- [App announcements](reference/app-announcements.md) — app-scoped,
-  durable announcement posts delivered through alpha, beta, and release channels.
+- [App announcements](reference/app-announcements.md) — durable app- and
+  connected-device announcements delivered through alpha, beta, and release
+  channels.
 - [App About content](reference/app-about-content.md) — app-scoped,
   mutable informational sections delivered through versioned contracts.
 

@@ -1,5 +1,18 @@
 {
   "schemaVersion": 1,
   "appId": "smartbeam",
-  "announcements": []
+  "announcements": [
+    {
+      "id": "c5055b88-d02f-46a2-b32e-dd0e4c9f1786",
+      "url": "../posts/2026/09/28/c5055b88-d02f-46a2-b32e-dd0e4c9f1786.json"
+    },
+    {
+      "id": "77eb4aff-da7d-4d20-be8e-5e1b37c741b4",
+      "url": "../posts/2026/09/28/77eb4aff-da7d-4d20-be8e-5e1b37c741b4.json"
+    },
+    {
+      "id": "7cd79d12-ee2c-4526-94f4-8a20f2c53ea9",
+      "url": "../posts/2026/09/28/7cd79d12-ee2c-4526-94f4-8a20f2c53ea9.json"
+    }
+  ]
 }

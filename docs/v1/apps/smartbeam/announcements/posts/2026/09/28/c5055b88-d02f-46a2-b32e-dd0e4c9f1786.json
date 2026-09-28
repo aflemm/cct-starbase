@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 2,
+  "id": "c5055b88-d02f-46a2-b32e-dd0e4c9f1786",
+  "appId": "smartbeam",
+  "publishedAt": "2026-09-28T19:36:13Z",
+  "severity": "info",
+  "title": "SmartBeam serial-target test",
+  "body": "This alpha-only post tests targeting to SmartBeam 4.1 serial 4.1~202602-8. No action is required.",
+  "audience": {
+    "type": "device",
+    "deviceTarget": {
+      "serialNumbers": [
+        { "productId": "4.1", "year": 2026, "month": 2, "unit": 8 }
+      ]
+    }
+  }
+}

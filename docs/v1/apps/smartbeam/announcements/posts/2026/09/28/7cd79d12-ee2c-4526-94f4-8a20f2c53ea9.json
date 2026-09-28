@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "id": "7cd79d12-ee2c-4526-94f4-8a20f2c53ea9",
+  "appId": "smartbeam",
+  "publishedAt": "2026-09-28T19:36:11Z",
+  "severity": "info",
+  "title": "Schema v2 app announcement test",
+  "body": "This alpha-only post tests a schema version 2 app-wide announcement. No action is required.",
+  "audience": { "type": "app" }
+}

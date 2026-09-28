@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 2,
+  "id": "77eb4aff-da7d-4d20-be8e-5e1b37c741b4",
+  "appId": "smartbeam",
+  "publishedAt": "2026-09-28T19:36:12Z",
+  "severity": "info",
+  "title": "SmartBeam firmware-target test",
+  "body": "This alpha-only post tests device targeting for SmartBeam 4.1 firmware 1.2.100 and later. No action is required.",
+  "audience": {
+    "type": "device",
+    "deviceTarget": {
+      "productIds": ["4.1"],
+      "firmwareVersionRange": { "minimumInclusive": "1.2.100" }
+    }
+  }
+}

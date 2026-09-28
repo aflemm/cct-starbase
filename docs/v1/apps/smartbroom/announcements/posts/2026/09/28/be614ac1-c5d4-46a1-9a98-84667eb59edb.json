@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "id": "be614ac1-c5d4-46a1-9a98-84667eb59edb",
+  "appId": "smartbroom",
+  "publishedAt": "2026-09-28T19:36:15Z",
+  "severity": "info",
+  "title": "SmartBroom 3.1 product-target test",
+  "body": "This alpha-only post tests device targeting for SmartBroom product 3.1. No action is required.",
+  "audience": {
+    "type": "device",
+    "deviceTarget": {
+      "productIds": ["3.1"]
+    }
+  }
+}

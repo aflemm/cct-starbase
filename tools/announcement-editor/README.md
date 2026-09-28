@@ -29,8 +29,11 @@ browser- and permission-dependent.
 
 ## Publishing model
 
-The UI follows the announcement contract in
-[`reference/app-announcements.md`](../../reference/app-announcements.md):
+The editor implements the channel model from the announcement contract in
+[`reference/app-announcements.md`](../../reference/app-announcements.md), but
+its post authoring currently supports only schema version 1 app-wide posts. It
+does not yet support authoring or safely correcting schema version 2 posts.
+The channel model is:
 
 - Release clients receive `release`.
 - External beta clients receive `release` and `beta`.
