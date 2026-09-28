@@ -136,26 +136,60 @@ Values within `productIds`, `hardwareVersions`, and `firmwareVersions`, and
 objects within `serialNumbers`, are alternatives within their selector.
 Separate selectors combine with AND; for example, if both `productIds` and
 `serialNumbers` are present, a serial identity must match and its product ID
-must also be in `productIds`. Version ranges use `minimumInclusive` and
-`maximumExclusive`; each range must contain at least one bound, and its upper
-bound must be later than its lower bound. Hardware version values and bounds
-use two decimal integer components (`major.minor`); firmware values and bounds
-use three (`major.minor.build`). Each component must be a non-negative decimal
-integer. Components compare numerically, with the lower bound inclusive and
-upper bound exclusive. Invalid targets or ranges must not match.
-If a connected device is missing or has not yet reported a value required by a
-selector, the device-targeted post must not be shown for it.
+must also be in `productIds`.
+
+## Version ranges
+
+Schema version 1 is frozen: its `appVersionRange` supports only
+`minimumInclusive` and `maximumExclusive`. Do not add the other bound fields to
+a version 1 post, because older clients may ignore them. The four-bound rules
+below apply to `appVersionRange` on schema version 2 and to
+`hardwareVersionRange` and `firmwareVersionRange` in a device target.
+In a version 1 range, the minimum is inclusive, the maximum is exclusive, at
+least one must be present, and the maximum must be later than the minimum.
+
+These ranges use the same four optional bounds:
+
+- `minimumInclusive`: version must be greater than or equal to this lower bound.
+- `minimumExclusive`: version must be greater than this lower bound.
+- `maximumInclusive`: version must be less than or equal to this upper bound.
+- `maximumExclusive`: version must be less than this upper bound.
+
+A range must contain at least one bound. It may contain at most one minimum
+bound and at most one maximum bound; for example, `minimumInclusive` and
+`minimumExclusive` cannot both appear in the same range. A lower bound must
+precede the upper bound. Equal bounds are valid only when both are inclusive,
+which selects exactly that version. Missing lower or upper bounds are
+unbounded in that direction. Invalid or empty ranges must not match.
+
+App versions use `YYYY.M[.Patch]`: a four-digit year, a month from `1` through
+`12` (without zero-padding requirements), and an optional non-negative patch.
+An omitted patch is `0`, so `2026.9` and `2026.9.0` are the same version.
+Compare year, month, and patch numerically.
+
+Hardware version values and range bounds use two non-negative decimal integer
+components (`major.minor`) and compare numerically. Firmware values and range
+bounds use three non-negative decimal integer components
+(`major.minor.build`), with the firmware-specific ordering below.
+
+Firmware version ordering follows the SmartBroom and SmartBeam release policy:
+`major.minor` identifies a release line; build `0` is that line's production
+release, while positive builds are development or beta builds. Compare
+`major.minor` numerically first. Within the same `major.minor` line, positive
+builds sort numerically before build `0`, so a beta such as `1.2.100` is older
+than its release `1.2.0`. This ordering applies to all firmware-version range
+bounds. For example, `maximumExclusive: "1.2.0"` includes `1.2.100`, while
+`minimumInclusive: "1.2.0"` excludes it. Exact-value selectors such as
+`firmwareVersions` continue to match only the listed version.
+
+Invalid targets or ranges must not match. If a connected device is missing or
+has not yet reported a value required by a selector, the device-targeted post
+must not be shown for it.
 
 `appVersionRange` is optional in both schema versions. When absent, a post
-applies to every app version. When present, it must contain at least one bound;
-a matching app version is greater than or equal to `minimumInclusive` (when
-supplied) and less than `maximumExclusive` (when supplied). In schema version
-2, this is an independent filter: both the app version and audience must
-match. App versions use `YYYY.M[.Patch]`: a four-digit year, a month from `1`
-through `12` (without zero-padding requirements), and an optional
-non-negative patch. An omitted patch is `0`, so `2026.9` and `2026.9.0` are
-the same version. Bounds must be valid, and an upper bound must be later than
-a lower bound. Invalid ranges must not match.
+applies to every app version. When present, the app version must satisfy its
+range. In schema version 2, this is an independent filter: both the app version
+and audience must match.
 
 ### Compatibility and privacy
 
