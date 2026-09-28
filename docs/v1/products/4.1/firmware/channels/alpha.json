@@ -3,5 +3,21 @@
   "productId": "4.1",
   "productName": "SmartBeam",
   "channel": "alpha",
-  "releases": []
+  "releases": [
+    {
+      "version": "1.2.1",
+      "publishedAt": "2026-09-28T15:39:25Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.2.1/SmartBeam_OTA-1.2.1.bin",
+        "size": 663552,
+        "sha256": "de112649a1724bd816c7bd842a6b186af4b20d3ed16482fce7707c717f8c50a5"
+      },
+      "releaseNotes": "## SmartBeam alpha 1.2.1\n\n- During an OTA update, the two system LEDs alternate a dim purple indication every 600 ms, matching SmartBroom's firmware-transfer cue. The beam and battery LEDs keep their normal indications."
+    }
+  ]
 }
