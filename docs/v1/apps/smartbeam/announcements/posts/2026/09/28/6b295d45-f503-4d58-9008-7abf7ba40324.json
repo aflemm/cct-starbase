@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "id": "6b295d45-f503-4d58-9008-7abf7ba40324",
+  "appId": "smartbeam",
+  "publishedAt": "2026-09-28T23:10:31Z",
+  "severity": "info",
+  "title": "Welcome to SmartBeam Beta",
+  "body": "This is a test announcement for the SmartBeam beta channel. If you can see this, beta announcement delivery is working. No action is required.",
+  "audience": { "type": "app" }
+}

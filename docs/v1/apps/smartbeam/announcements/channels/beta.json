@@ -1,5 +1,10 @@
 {
   "schemaVersion": 1,
   "appId": "smartbeam",
-  "announcements": []
+  "announcements": [
+    {
+      "id": "6b295d45-f503-4d58-9008-7abf7ba40324",
+      "url": "../posts/2026/09/28/6b295d45-f503-4d58-9008-7abf7ba40324.json"
+    }
+  ]
 }
