@@ -3,5 +3,22 @@
   "productId": "4.1",
   "productName": "SmartBeam",
   "channel": "alpha",
-  "releases": []
+  "releases": [
+    {
+      "version": "1.2.105",
+      "channel": "alpha",
+      "publishedAt": "2026-09-29T23:35:56Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.2.105/SmartBeam_OTA-1.2.105.bin",
+        "size": 667648,
+        "sha256": "019613e2514775ef20d874748f1b26cd278ac00412ae02bf80ffbb0b231270c9"
+      },
+      "releaseNotes": "## SmartBeam beta 1.2.105\n\n- Adds persistent lifetime counters for device runtime, battery runtime, beam breaks, and boots.\n- Exposes the counters through a read-only Device Information BLE characteristic for client integration.\n"
+    }
+  ]
 }
