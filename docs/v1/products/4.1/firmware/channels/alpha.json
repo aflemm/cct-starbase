@@ -19,6 +19,22 @@
         "sha256": "019613e2514775ef20d874748f1b26cd278ac00412ae02bf80ffbb0b231270c9"
       },
       "releaseNotes": "## SmartBeam beta 1.2.105\n\n- Adds persistent lifetime counters for device runtime, battery runtime, beam breaks, and boots.\n- Exposes the counters through a read-only Device Information BLE characteristic for client integration.\n"
+    },
+    {
+      "version": "1.2.106",
+      "channel": "alpha",
+      "publishedAt": "2026-09-29T23:54:48Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.2.106/SmartBeam_OTA-1.2.106.bin",
+        "size": 667648,
+        "sha256": "eb083b7e9c8d321fc749bc58fcdd8a52732e6ad1e49e49726ff17d1e39f49213"
+      },
+      "releaseNotes": "## SmartBeam beta 1.2.106\n\n### Fixes\n\n- Keep lifetime-log NVS operations outside FreeRTOS critical sections.\n- Count battery runtime correctly when USB connection state changes without an SOC or charging-state change.\n"
     }
   ]
 }
