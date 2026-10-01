@@ -4,21 +4,6 @@
   "productName": "SmartBeam",
   "channel": "release",
   "releases": [
-    {
-      "version": "1.1.0",
-      "publishedAt": "2026-09-26T03:57:09Z",
-      "presentation": "automatic",
-      "urgency": "high",
-      "compatibility": {
-        "minimumHardwareVersion": "0.0",
-        "minimumCurrentFirmwareVersion": "1.0.0"
-      },
-      "image": {
-        "url": "../releases/1.1.0/SmartBeam_OTA-1.1.0.bin",
-        "size": 659456,
-        "sha256": "fafff65cf129d807c7763f97d1d3f9e7c342afe401411a5a6edb1a94ac022084"
-      },
-      "releaseNotes": "## SmartBeam 1.1.0\n\n- Fixes a startup issue where the beam indication could incorrectly show green before the beam has been established"
-    }
+    
   ]
 }

@@ -4,21 +4,20 @@
   "productName": "SmartBeam",
   "channel": "beta",
   "releases": [
-    {
-      "version": "1.2.101",
-      "channel": "beta",
-      "publishedAt": "2026-09-28T22:56:06Z",
+  	{
+      "version": "1.2.106",
+      "publishedAt": "2026-09-29T23:54:48Z",
       "presentation": "automatic",
       "compatibility": {
         "minimumHardwareVersion": "0.0",
         "minimumCurrentFirmwareVersion": "1.0.0"
       },
       "image": {
-        "url": "../releases/1.2.101/SmartBeam_OTA-1.2.101.bin",
-        "size": 663552,
-        "sha256": "a0e4cb9ba1e1552d66a7385d04637d0d7f8545bf83f89ef2d27adf75daca1d17"
+        "url": "../releases/1.2.106/SmartBeam_OTA-1.2.106.bin",
+        "size": 667648,
+        "sha256": "eb083b7e9c8d321fc749bc58fcdd8a52732e6ad1e49e49726ff17d1e39f49213"
       },
-      "releaseNotes": "## SmartBeam beta 1.2.101\n\n- BLE startup now reports NimBLE host task allocation failures instead of treating startup as successful.\n"
+      "releaseNotes": "## SmartBeam beta 1.2.106\n\n### Fixes\n\n- Keep lifetime-log NVS operations outside FreeRTOS critical sections.\n- Count battery runtime correctly when USB connection state changes without an SOC or charging-state change.\n"
     },
     {
       "version": "1.2.2",
@@ -34,7 +33,22 @@
         "sha256": "692f5c7a7e8f7edde720224808e1b05fa6c9ea9ef3add845a6a437084f538603"
       },
       "releaseNotes": "## SmartBeam beta 1.2.2\n\n- During an OTA update, the two system LEDs alternate a dim purple indication every 600 ms, matching SmartBroom's firmware-transfer cue. The beam and battery LEDs keep their normal indications.",
-      "channel": "beta"
+    },
+    {
+      "version": "1.1.0",
+      "publishedAt": "2026-09-26T03:57:09Z",
+      "presentation": "automatic",
+      "urgency": "high",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.0/SmartBeam_OTA-1.1.0.bin",
+        "size": 659456,
+        "sha256": "fafff65cf129d807c7763f97d1d3f9e7c342afe401411a5a6edb1a94ac022084"
+      },
+      "releaseNotes": "## SmartBeam 1.1.0\n\n- Fixes a startup issue where the beam indication could incorrectly show green before the beam has been established"
     }
   ]
 }
