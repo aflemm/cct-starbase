@@ -18,7 +18,7 @@
         "size": 659456,
         "sha256": "e97d1c75eb539e7ec2affc2d7794f7c14ef9e93447536aafaff8ed63ce0c83c9"
       },
-      "releaseNotes": "## SmartBeam 1.2.0\n\n- Adds a dim purple LED indication during OTA updates while keeping the beam and battery LEDs on their normal indications.\n- Reports BLE host task allocation failures during startup instead of treating BLE startup as successful.\n- Adds persistent lifetime counters for device runtime, battery runtime, beam breaks, and boots, available through a read-only Device Information BLE characteristic.\n- Fixes lifetime-log storage and battery-runtime counting when USB connection state changes.\n- Production firmware is signed with Secure Boot V2 and uses release-mode flash-encryption provisioning.\n"
+      "releaseNotes": "## SmartBeam 1.2.0\n\n- Adds a subtle purple light pattern while a software update is installing. The beam and battery indicators continue to show their usual status.\n- Improves Bluetooth startup diagnostics.\n- Tracks lifetime device and battery run time, beam interruptions, and device starts. Compatible apps can read these statistics.\n- Improves battery run time tracking when USB power is connected or disconnected, and makes saved usage statistics more reliable.\n"
     }
   ]
 }
