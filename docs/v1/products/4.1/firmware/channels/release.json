@@ -19,6 +19,23 @@
         "sha256": "e97d1c75eb539e7ec2affc2d7794f7c14ef9e93447536aafaff8ed63ce0c83c9"
       },
       "releaseNotes": "## SmartBeam 1.2.0\n\n- Adds a subtle purple light pattern while a software update is installing. The beam and battery indicators continue to show their usual status.\n- Improves Bluetooth startup diagnostics.\n- Tracks lifetime device and battery run time, beam interruptions, and device starts. Compatible apps can read these statistics.\n- Improves battery run time tracking when USB power is connected or disconnected, and makes saved usage statistics more reliable.\n"
+    },
+    {
+      "version": "1.1.0",
+      "channel": "release",
+      "publishedAt": "2026-10-07T21:37:32Z",
+      "presentation": "automatic",
+      "urgency": "high",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.0/SmartBeam_OTA-1.1.0.bin",
+        "size": 659456,
+        "sha256": "fafff65cf129d807c7763f97d1d3f9e7c342afe401411a5a6edb1a94ac022084"
+      },
+      "releaseNotes": "## SmartBeam 1.1.0\n\n- Fixes a startup issue where the beam indication could incorrectly show green before the beam has been established"
     }
   ]
 }
