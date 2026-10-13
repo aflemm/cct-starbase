@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "c146ab98-7cd3-41c8-bcf8-0e817821b512",
+  "appId": "smartbroom",
+  "publishedAt": "2026-10-13T22:54:50Z",
+  "severity": "info",
+  "title": "SmartBroom 2026.10",
+  "body": "A major update to SmartBroom brings powerful new session insights, a redesigned live sweeping experience, and expanded multi-device support on iPad.\n\n## All New\n\nAn all new session display for SmartBroom 4 shows you graphical overviews of sweep metrics across an entire practice or game. Sessions also gain titles, descriptions, and notes.\n\nLive sweeps now have a new interface, allowing multiple sweepers to easily swap a SmartBroom back and forth.\n\nOn iPad you can now open multiple windows and connect to multiple SmartBrooms in parallel.\n\n## Improvements and Fixes\n\n- Performance is improved, especially scrolling through lists of sweep charts.\n- Fixes SPI scaling issue\n- Fixes x-axis marks in charts",
+  "appVersionRange": {
+    "minimumInclusive": "2026.10",
+    "maximumExclusive": "2026.11"
+  }
+}
