@@ -18,7 +18,7 @@
         "size": 659456,
         "sha256": "e97d1c75eb539e7ec2affc2d7794f7c14ef9e93447536aafaff8ed63ce0c83c9"
       },
-      "releaseNotes": "## SmartBeam 1.2.0\n\n- Adds a subtle purple light pattern while a software update is installing. The beam and battery indicators continue to show their usual status.\n- Improves Bluetooth startup diagnostics.\n- Tracks lifetime device and battery run time, beam interruptions, and device starts. Compatible apps can read these statistics.\n- Improves battery run time tracking when USB power is connected or disconnected, and makes saved usage statistics more reliable.\n"
+      "releaseNotes": "## SmartBeam 1.2.0\n\n- Adds a subtle purple light pattern while a software update is installing.\n- Improves bluetooth reliability.\n- Improves battery run time tracking when USB power is connected or disconnected.\n"
     },
     {
       "version": "1.1.0",
