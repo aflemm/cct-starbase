@@ -45,13 +45,19 @@ product ID for deactivation checks.
 
 ## SmartBeam endpoints
 
-SmartBeam uses app ID `smartbeam` and hardware product ID `4.1`. Its firmware
+SmartBeam iOS uses app ID `smartbeam`; Android uses the separate app ID
+`smartbeam-android`. Both use hardware product ID `4.1`. Its firmware
 catalogues, announcement indices, and serial blacklist are provisioned at the
 standard v1 endpoints under `docs/v1`:
 
 - Firmware: `products/4.1/firmware/channels/{alpha,beta,release}.json`
 - Announcements: `apps/smartbeam/announcements/channels/{alpha,beta,release}.json`
+- Android announcements: `apps/smartbeam-android/announcements/channels/{alpha,beta,release}.json`
 - Serial blacklist: `products/4.1/blacklist-serial-numbers.json`
+
+Android announcement posts and channel indices are independent of iOS. Keep
+Android posts beneath `apps/smartbeam-android/announcements/posts/` with
+`appId: "smartbeam-android"`; do not point Android indices at iOS posts.
 
 Keep each endpoint present even when its collection is empty. The 4.1 blacklist
 starts with no entries; add only serial numbers confirmed for deactivation.
