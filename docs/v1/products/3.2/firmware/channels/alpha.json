@@ -54,6 +54,23 @@
         "sha256": "f74e414ed3f47c91421872c4624629ab25761267d91269eb8b9c8b42e01c97b9"
       },
       "releaseNotes": "## SmartBroom beta 1.3.12\n\n### Improvements\n\n- Tighten autotare stability to within one ADC count of the window entry reading and require at least 100 samples over a minimum of four seconds before evaluation, reducing the chance of accepting a false zero.\n- Add a compile-time direction-lock option for autotare testing. This beta leaves direction locking disabled, allowing readings on both sides of the window entry within the one-count range.\n- Enable force-sensor informational logging to support autotare evaluation.\n"
+    },
+    {
+      "version": "1.3.13",
+      "channel": "alpha",
+      "publishedAt": "2026-10-14T23:33:19Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.13/SmartBroom_OTA-1.3.13.bin",
+        "size": 770048,
+        "sha256": "cc5ffbd41cbffe9234a2ffc2437eac21dc0b8fee929c540bbbe44e1bf627c8af"
+      },
+      "releaseNotes": "## SmartBroom beta 1.3.13\n\n### Improvements\n\n- Use the secondary system LED (index 3 on standard hardware) for field debugging: steady green when filtered force is within -1,000 to +1,000 grams, inclusive, and off outside that range. Invalid calibration or force samples older than one second also turn the indicator off.\n- Flash the secondary system LED green twice after a successful automatic or button tare. OTA, shutdown, and play-dead indications retain priority.\n- A short button press while active requests a tare using the next acquired ADC sample. Sampling must be enabled. The tare resets the force filter, restarts the autotare stability window and cooldown, and updates the active zero without saving calibration to flash.\n- Preserve long-press power-off and short-press wake behavior.\n"
     }
   ]
 }
