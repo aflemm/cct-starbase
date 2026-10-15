@@ -105,6 +105,23 @@
         "sha256": "5f15c1bf85459d38e8f2f074667fbc732f30623154abb6f2e050753c85e3f008"
       },
       "releaseNotes": "## SmartBroom beta 1.3.20\n\n### Improvements\n\n- Tune autotare stability to allow readings within two ADC counts of the window entry, with direction locking disabled.\n- Require a stable window of at least five seconds and at least 50 samples before autotare evaluation.\n- Retain the secondary system LED force-zero indication, tare flashes, and short-button-press tare for field testing.\n"
+    },
+    {
+      "version": "1.3.22",
+      "channel": "alpha",
+      "publishedAt": "2026-10-15T16:33:15Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.22/SmartBroom_OTA-1.3.22.bin",
+        "size": 770048,
+        "sha256": "b6cf2a79746ef5bf9251bbcc67ffd3c9df40e44c4a98550911ba0879e846ae2c"
+      },
+      "releaseNotes": "## SmartBroom beta 1.3.22\n\n### Improvements\n\n- Keep normal push detection at 5 kg while requiring at least 10 kg continuously for 350 ms before a plow can start. The existing push peak timeout must also expire before plow entry.\n- Reset plow qualification and its accumulated force whenever force drops below 10 kg. Earlier 5\u20139 kg readings are excluded from the first plow event.\n- Discard an unqualified candidate released after the push deadline without emitting a late push, allowing detection to resume for the next stroke.\n- Preserve the existing reporting interval and exit behavior for an established plow.\n\n### Validation\n\n- Seven host regression tests passed, covering threshold boundaries, qualification resets, low-force holds followed by plow entry, push detection, candidate release, and plow continuation.\n- SmartBroom development firmware build 1.3.22 passed.\n"
     }
   ]
 }
