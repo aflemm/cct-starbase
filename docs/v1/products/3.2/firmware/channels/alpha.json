@@ -122,6 +122,23 @@
         "sha256": "b6cf2a79746ef5bf9251bbcc67ffd3c9df40e44c4a98550911ba0879e846ae2c"
       },
       "releaseNotes": "## SmartBroom beta 1.3.22\n\n### Improvements\n\n- Keep normal push detection at 5 kg while requiring at least 10 kg continuously for 350 ms before a plow can start. The existing push peak timeout must also expire before plow entry.\n- Reset plow qualification and its accumulated force whenever force drops below 10 kg. Earlier 5\u20139 kg readings are excluded from the first plow event.\n- Discard an unqualified candidate released after the push deadline without emitting a late push, allowing detection to resume for the next stroke.\n- Preserve the existing reporting interval and exit behavior for an established plow.\n\n### Validation\n\n- Seven host regression tests passed, covering threshold boundaries, qualification resets, low-force holds followed by plow entry, push detection, candidate release, and plow continuation.\n- SmartBroom development firmware build 1.3.22 passed.\n"
+    },
+    {
+      "version": "1.3.40",
+      "channel": "alpha",
+      "publishedAt": "2026-10-15T20:19:57Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.40/SmartBroom_OTA-1.3.40.bin",
+        "size": 778240,
+        "sha256": "cb2bb896ad5ec45ffa0e99f2a7173b8395d5be14f4ef4d5522f63082f11cab50"
+      },
+      "releaseNotes": "## SmartBroom beta 1.3.40\n\n### Engineering configuration\n\n- Add EngComm address 3, `autotare-configuration`, with default 31 (`0b11111`): bit 0 applies automatic tare, bit 1 saves automatic tares, bit 2 indicates manual/automatic tare, bit 3 indicates near-zero force, and bit 4 enables short-button tare.\n- Keep automatic-tare tracking active while application is disabled. Indications remain independent of automatic-tare enablement.\n- Apply live setting changes immediately; stop active tare flashes when their indication is disabled. Configuration persistence uses the normal EngComm save commands.\n\n### First-boot migration\n\n- Migrate validated EngComm V1 records to schema V2, preserving power settings at addresses 0\u20132 and initializing address 3 to 31. All legacy/interim autotare preferences are reset once.\n- Preserve V2 preferences on subsequent boots, including a deliberately saved zero. Persist defaults once on fresh devices.\n- Retry failed migration writes on a later boot; do not overwrite malformed or unknown-version records automatically.\n- Bondage release restores and saves all five enabled bits.\n\n### Fuel gauge and boot\n\n- Pace shared fuel-gauge commands, retain synchronous provisioning, and bound initialization with a 60-second deadline.\n- Start SmartBroom LEDs before gauge initialization, reuse startup readings, and allow a 90-second boot watchdog window.\n\n### Validation\n\n- Host tests passed for all 32 flag combinations, live behavior, persistence, schema migration, repeat boots, failed writes/retry, and invalid-record protection.\n- The force-processing regression suite passed in the preceding configuration build; this build changes EngComm migration without changing force-processing thresholds.\n- SmartBroom development firmware 1.3.40 built successfully. Hardware migration testing is pending.\n"
     }
   ]
 }
