@@ -19,6 +19,22 @@
         "sha256": "8ed6565ca3a02a37d01db39199ccb9e88751a5d0bd8bbf6dbcbbc66e976b298c"
       },
       "releaseNotes": "# LightBroom 1.1.48 Beta\n\n- Connecting USB from fully off starts charging-only mode without the boot Cylon animation or Bluetooth advertising.\n- The SOC bar stays steady dim white while the fuel gauge initializes, then animates up to the measured charge level.\n- Holding the power button to shut down with USB attached shows two red system LEDs alongside the charging SOC bar. Releasing the button turns off the red LEDs; a fresh short or long press restarts normal operation.\n- Shutdown uses USB detection independently of fuel-gauge readiness and remains wakeable if USB is connected during shutdown.\n- Power-hold release no longer waits for Bluetooth cleanup. Accelerometer preparation has a bounded wait, and advertising retries are suppressed during Bluetooth shutdown.\n- Existing full-charge display timeout and USB-removal power-off behavior are retained.\n\nThis beta targets product 5.1 (LightBroom / Inner Light). It is a signed OTA update; it does not include a factory image.\n"
+    },
+    {
+      "version": "1.1.77",
+      "channel": "beta",
+      "publishedAt": "2026-10-19T18:34:57Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.77/LightBroom_OTA-1.1.77.bin",
+        "size": 704512,
+        "sha256": "9183ad993d05c3161851b60def2ec87694495b0fb67cdbbf6fc9a86a45ff342a"
+      },
+      "releaseNotes": "# LightBroom 1.1.77 Beta\n\n- Battery gauge initialization runs in the background while the device starts. USB and charger detection remain available throughout initialization and recovery.\n- Voltage, charge level and current refresh about every four seconds; diagnostic capacity readings rotate at a slower rate.\n- Battery notifications report current changes of at least 5 mA. Capacity and health appear as each becomes available, without changing the BLE packet format.\n- Startup Cylon makes two out-and-back passes. It is rainbow when rainbow is selected, otherwise red.\n- The SOC bar stays white for at least 500 ms before filling. Waiting for gauge data counts toward this minimum, and no longer consumes the startup SOC display window. The fill completes before automatic dismissal; gauge recovery restarts the presentation.\n- Existing button dismissal, red shutdown indication, charging play-dead startup and USB-removal power-off behavior are retained.\n- OTA confirmation waits for startup services and a ready fuel gauge. A failed initial current read does not reject gauge initialization.\n\nThis beta targets product 5.1 (LightBroom / Inner Light). It is a signed OTA update; it does not include a factory image.\n"
     }
   ]
 }
