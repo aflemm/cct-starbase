@@ -3,5 +3,22 @@
   "productId": "5.1",
   "productName": "LightBroom",
   "channel": "alpha",
-  "releases": []
+  "releases": [
+    {
+      "version": "1.1.79",
+      "channel": "alpha",
+      "publishedAt": "2026-10-19T18:45:53Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.79/LightBroom_OTA-1.1.79.bin",
+        "size": 729088,
+        "sha256": "14c7097ac716a09939e464a4844269affa0b67cbc1787a546b4f3b31f5c1ec37"
+      },
+      "releaseNotes": "# LightBroom 1.1.79 Beta\n\n- LED output now uses SPI with DMA, matching SmartBeam's output method, to address LED flicker.\n- Existing LED colours, brightness controls, animations and startup indications are retained.\n\nThis beta targets product 5.1 (LightBroom / Inner Light). It is a signed OTA update; it does not include a factory image.\n"
+    }
+  ]
 }
