@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "productId": "5.1",
+  "productName": "LightBroom",
+  "channel": "beta",
+  "releases": [
+    {
+      "version": "1.1.48",
+      "channel": "beta",
+      "publishedAt": "2026-10-19T15:41:02Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.48/LightBroom_OTA-1.1.48.bin",
+        "size": 700416,
+        "sha256": "8ed6565ca3a02a37d01db39199ccb9e88751a5d0bd8bbf6dbcbbc66e976b298c"
+      },
+      "releaseNotes": "# LightBroom 1.1.48 Beta\n\n- Connecting USB from fully off starts charging-only mode without the boot Cylon animation or Bluetooth advertising.\n- The SOC bar stays steady dim white while the fuel gauge initializes, then animates up to the measured charge level.\n- Holding the power button to shut down with USB attached shows two red system LEDs alongside the charging SOC bar. Releasing the button turns off the red LEDs; a fresh short or long press restarts normal operation.\n- Shutdown uses USB detection independently of fuel-gauge readiness and remains wakeable if USB is connected during shutdown.\n- Power-hold release no longer waits for Bluetooth cleanup. Accelerometer preparation has a bounded wait, and advertising retries are suppressed during Bluetooth shutdown.\n- Existing full-charge display timeout and USB-removal power-off behavior are retained.\n\nThis beta targets product 5.1 (LightBroom / Inner Light). It is a signed OTA update; it does not include a factory image.\n"
+    }
+  ]
+}

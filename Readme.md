@@ -63,6 +63,19 @@ Keep each endpoint present even when its collection is empty. The 4.1 blacklist
 starts with no entries; add only serial numbers confirmed for deactivation.
 Firmware artifacts are immutable and referenced by the channel manifest.
 
+## LightBroom endpoints
+
+LightBroom (Inner Light) uses hardware product ID `5.1`. Its firmware channels
+and serial blacklist are provisioned at the standard v1 endpoints:
+
+- Firmware: `products/5.1/firmware/channels/{alpha,beta,release}.json`
+- Serial blacklist: `products/5.1/blacklist-serial-numbers.json`
+
+Keep all three channel manifests present even when empty. Beta firmware is
+published only to beta; alpha and release remain empty until a release is
+explicitly offered on those channels. Signed OTA artifacts and their SHA-256
+checksums live beneath `products/5.1/firmware/releases/<version>/`.
+
 ## Publishing
 
 Review a changed document against its concern contract before committing it.
