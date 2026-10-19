@@ -88,6 +88,23 @@
         "sha256": "97ba46a7d334e8b6a6935cadaeb5403093f705d324decb28545cdab26d0b018a"
       },
       "releaseNotes": "## SmartBroom beta 1.2.1\n\n### Fixes\n\n- Starts a new stroke stream after plowing, so the first following push is not paired with plow exit or reported with a false cadence period.\n\n### Behavioral/contract changes\n\n- The first push after a plow emits a period of 0 ms. Apps should treat this as no cadence period available, matching the first push of a new sweep."
+    },
+    {
+      "version": "1.3.106",
+      "channel": "beta",
+      "publishedAt": "2026-10-19T18:49:31Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.106/SmartBroom_OTA-1.3.106.bin",
+        "size": 802816,
+        "sha256": "694090a298d231deb91b95bc498073555a7d021455d1ddf5f35d2b87d4bec634"
+      },
+      "releaseNotes": "# SmartBroom 1.3.106 Beta\n\n- LED initialization now selects RMT explicitly through the shared LED component, preserving SmartBroom's maximum 96-symbol transmit buffer and existing LED indications.\n- Includes background battery gauge initialization, independent battery telemetry updates and improved USB charging startup and shutdown handling from the 1.3 development line.\n- OTA confirmation waits for required services and baseline battery gauge readiness.\n\nThis signed beta OTA package is distributed through the beta channel for product 3.2 (SmartBroom). It does not include a factory image.\n"
     }
   ]
 }
