@@ -2,14 +2,13 @@
   "schemaVersion": 1,
   "appId": "smartbeam",
   "revision": 1,
-  "updatedAt": "2026-10-20T22:56:05Z",
+  "updatedAt": "2026-10-20T22:58:45Z",
   "sections": [
     {
       "id": "product-guide",
-      "title": "About SmartBeam",
       "footer": "Explore the SmartBeam Product Guide for information on using your SmartBeam and the app.",
       "rows": [
-        { "id": "product-guide", "type": "webLink", "title": "Product Guide", "systemImage": "book.closed", "url": "https://docs.curling.tools/smartbeam/" }
+        { "id": "product-guide", "type": "webLink", "title": "SmartBeam Product Guide", "systemImage": "book.closed", "url": "https://docs.curling.tools/smartbeam/" }
       ]
     },
     {
