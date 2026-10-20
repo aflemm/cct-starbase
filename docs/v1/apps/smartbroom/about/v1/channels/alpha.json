@@ -1,9 +1,17 @@
 {
   "schemaVersion": 1,
   "appId": "smartbroom",
-  "revision": 9,
-  "updatedAt": "2026-09-24T19:13:07Z",
+  "revision": 10,
+  "updatedAt": "2026-10-20T22:40:34Z",
   "sections": [
+    {
+      "id": "contact-us",
+      "footer": "If you need some help, have a suggestion, or want to talk about our products, please send an email.",
+      "rows": [
+        { "id": "product-guide", "type": "webLink", "title": "Product Guide", "systemImage": "book.closed", "url": "https://docs.curling.tools/smartbroom/" },
+        { "id": "contact-us", "type": "link", "title": "Contact Us", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" }
+      ]
+    },
     {
       "id": "shop",
       "rows": [
@@ -16,13 +24,6 @@
       "footer": "Stay up to date on product announcements, promotions, updates, and other Curling Tools news. We promise not to spam you, or sell your data to advertisers.",
       "rows": [
         { "id": "subscribe-updates", "type": "webLink", "title": "Subscribe to Updates", "systemImage": "envelope.badge", "url": "https://curling.tools/pages/newsletter-signup" }
-      ]
-    },
-    {
-      "id": "contact-us",
-      "footer": "If you need some help, have a suggestion, or want to talk about our products, please send an email.",
-      "rows": [
-        { "id": "contact-us", "type": "link", "title": "Contact Us", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" }
       ]
     },
     {
