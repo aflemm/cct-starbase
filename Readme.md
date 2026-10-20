@@ -52,6 +52,7 @@ standard v1 endpoints under `docs/v1`:
 
 - Firmware: `products/4.1/firmware/channels/{alpha,beta,release}.json`
 - Announcements: `apps/smartbeam/announcements/channels/{alpha,beta,release}.json`
+- About content: `apps/smartbeam/about/v1/channels/{alpha,beta,release}.json`
 - Android announcements: `apps/smartbeam-android/announcements/channels/{alpha,beta,release}.json`
 - Serial blacklist: `products/4.1/blacklist-serial-numbers.json`
 

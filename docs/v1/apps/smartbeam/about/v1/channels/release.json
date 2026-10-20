@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "appId": "smartbeam",
+  "revision": 1,
+  "updatedAt": "2026-10-20T22:56:05Z",
+  "sections": [
+    {
+      "id": "product-guide",
+      "title": "About SmartBeam",
+      "footer": "Explore the SmartBeam Product Guide for information on using your SmartBeam and the app.",
+      "rows": [
+        { "id": "product-guide", "type": "webLink", "title": "Product Guide", "systemImage": "book.closed", "url": "https://docs.curling.tools/smartbeam/" }
+      ]
+    },
+    {
+      "id": "shop",
+      "rows": [
+        { "id": "shop-smartbeam", "type": "link", "title": "Shop SmartBeam", "systemImage": "cart", "url": "https://curling.tools/products/smartbeam" }
+      ]
+    },
+    {
+      "id": "subscribe",
+      "footer": "Stay up to date on product announcements, promotions, updates, and other Curling Tools news. We promise not to spam you, or sell your data to advertisers.",
+      "rows": [
+        { "id": "subscribe-updates", "type": "webLink", "title": "Subscribe to Updates", "systemImage": "envelope.badge", "url": "https://curling.tools/pages/newsletter-signup" }
+      ]
+    },
+    {
+      "id": "other-products",
+      "title": "Our Other Products",
+      "rows": [
+        { "id": "smartbroom", "type": "detailLink", "title": "SmartBroom", "detail": "The data you need to improve your sweeping", "url": "https://smartbroom.ca" },
+        { "id": "corebroom", "type": "detailLink", "title": "CoreBroom", "detail": "The best broom in curling, and a fair price for sleeves", "url": "https://curling.tools/corebroom" },
+        { "id": "lightbroom", "type": "detailLink", "title": "LightBroom", "detail": "The world's most fun curling broom", "url": "https://curling.tools/lightbroom" },
+        { "id": "curlbook", "type": "detailLink", "title": "CurlBook", "detail": "The best analytics for curling teams", "url": "https://curlbook.ca" }
+      ]
+    },
+    {
+      "id": "contact-us",
+      "footer": "If you need some help, have a suggestion, or want to talk about our products, please send an email.",
+      "rows": [
+        { "id": "contact-us", "type": "link", "title": "Contact Us", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" }
+      ]
+    },
+    {
+      "id": "legal",
+      "rows": [
+        { "id": "privacy-policy", "type": "link", "title": "Privacy Policy", "systemImage": "hand.raised.fill", "url": "https://curling.tools/pages/privacy" },
+        { "id": "license-agreement", "type": "link", "title": "License Agreement", "systemImage": "doc.text", "url": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" }
+      ]
+    }
+  ]
+}
