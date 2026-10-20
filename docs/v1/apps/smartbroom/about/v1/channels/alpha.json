@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "appId": "smartbroom",
-  "revision": 10,
-  "updatedAt": "2026-10-20T22:40:34Z",
+  "revision": 11,
+  "updatedAt": "2026-10-20T22:46:35Z",
   "sections": [
     {
       "id": "contact-us",
+      "title": "About SmartBroom",
       "footer": "If you need some help, have a suggestion, or want to talk about our products, please send an email.",
       "rows": [
         { "id": "product-guide", "type": "webLink", "title": "Product Guide", "systemImage": "book.closed", "url": "https://docs.curling.tools/smartbroom/" },
