@@ -1,15 +1,14 @@
 {
   "schemaVersion": 1,
   "appId": "smartbroom",
-  "revision": 12,
-  "updatedAt": "2026-10-20T22:54:17Z",
+  "revision": 13,
+  "updatedAt": "2026-10-20T22:57:32Z",
   "sections": [
     {
       "id": "product-guide",
-      "title": "About SmartBroom",
       "footer": "Explore the SmartBroom Product Guide for information on using your SmartBroom and the app.",
       "rows": [
-        { "id": "product-guide", "type": "webLink", "title": "Product Guide", "systemImage": "book.closed", "url": "https://docs.curling.tools/smartbroom/" }
+        { "id": "product-guide", "type": "webLink", "title": "SmartBroom Product Guide", "systemImage": "book.closed", "url": "https://docs.curling.tools/smartbroom/" }
       ]
     },
     {
