@@ -1,9 +1,16 @@
 {
   "schemaVersion": 1,
   "appId": "smartbroom",
-  "revision": 9,
-  "updatedAt": "2026-09-24T19:13:07Z",
+  "revision": 13,
+  "updatedAt": "2026-10-20T22:57:32Z",
   "sections": [
+    {
+      "id": "product-guide",
+      "footer": "Explore the SmartBroom Product Guide for information on using your SmartBroom and the app.",
+      "rows": [
+        { "id": "product-guide", "type": "webLink", "title": "SmartBroom Product Guide", "systemImage": "book.closed", "url": "https://docs.curling.tools/smartbroom/" }
+      ]
+    },
     {
       "id": "shop",
       "rows": [
@@ -19,13 +26,6 @@
       ]
     },
     {
-      "id": "contact-us",
-      "footer": "If you need some help, have a suggestion, or want to talk about our products, please send an email.",
-      "rows": [
-        { "id": "contact-us", "type": "link", "title": "Contact Us", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" }
-      ]
-    },
-    {
       "id": "other-products",
       "title": "Our Other Products",
       "rows": [
@@ -33,6 +33,13 @@
         { "id": "corebroom", "type": "detailLink", "title": "CoreBroom", "detail": "The best broom in curling, and a fair price for sleeves", "url": "https://curling.tools/corebroom" },
         { "id": "lightbroom", "type": "detailLink", "title": "LightBroom", "detail": "The world's most fun curling broom", "url": "https://curling.tools/lightbroom" },
         { "id": "curlbook", "type": "detailLink", "title": "CurlBook", "detail": "The best analytics for curling teams", "url": "https://curlbook.ca" }
+      ]
+    },
+    {
+      "id": "contact-us",
+      "footer": "If you need some help, have a suggestion, or want to talk about our products, please send an email.",
+      "rows": [
+        { "id": "contact-us", "type": "link", "title": "Contact Us", "systemImage": "envelope", "url": "mailto:curling@smartbroom.ca" }
       ]
     },
     {
