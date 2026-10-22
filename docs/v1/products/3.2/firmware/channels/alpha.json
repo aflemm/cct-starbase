@@ -275,6 +275,23 @@
         "sha256": "7f784a69b08343879d4f129fbee0d5d5786560a977b0891c38c3ea6055180791"
       },
       "releaseNotes": "# SmartBroom 1.3.254 Beta\n\n- Coordinates ADC analog-power transitions with shared I2C bus ownership so rail edges wait for active transfers, including clock stretching, and bus recovery to finish. The existing power-on settling delay runs after releasing the bus.\n- Keeps the recorded rail state unchanged when a transition fails, allowing a later retry. Power control remains available during bus-fault cooldown and respects the restart gate.\n- Re-anchors force sampling after successful acquisitions that overrun the next scheduled sample slot, skipping missed slots instead of attempting to catch up. On-time acquisitions retain their cadence.\n\nHost checks passed at 1000 Hz and 100 Hz, including rail ownership, transition failures, restart gating, and successful-overrun scheduling across tick wrap. The firmware build passed. Hardware validation of the intermittent shared-bus fault remains pending. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
+    },
+    {
+      "version": "1.3.257",
+      "channel": "alpha",
+      "publishedAt": "2026-10-22T22:26:11Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.257/SmartBroom_OTA-1.3.257.bin",
+        "size": 815104,
+        "sha256": "5941d5eedd9c643fe517979b703bf70c759c7dcee1b9cc64e9e6d5e15c21f544"
+      },
+      "releaseNotes": "# SmartBroom 1.3.257 Beta\n\n- Fresh beta build from the current SmartBroom 1.3 working tree following bench debugging.\n- Retains ADC power transitions coordinated with shared I2C bus ownership, retryable transition failures, and force-sampling re-anchoring after successful overruns.\n- Retains shared-bus recovery and first-fault diagnostics for continued hardware investigation.\n\nThis signed beta OTA package is offered through the alpha stream and does not include a factory image. Resolution of the intermittent shared-bus fault is not confirmed by this release.\n"
     }
   ]
 }
