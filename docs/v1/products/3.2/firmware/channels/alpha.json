@@ -377,23 +377,6 @@
         "sha256": "b910003769bf2ef4236c40b4cf701b4f00dcc36fe873741b8c93eea41969ae94"
       },
       "releaseNotes": "# SmartBroom 1.3.276 Beta\n\n- Unifies the requested I2C clock-stretch allowance at 5 ms for all managed peripherals: fuel gauge, ADC, RTC, and accelerometer. Initial registration and replacement handles use the same setting.\n- Replaces the per-device 5 ms/1 ms policy in 1.3.273.\n- Retains automatic light sleep disabled, coordinated ADC power transitions, force-sampling re-anchoring after successful overruns, shared-bus recovery, and first-fault diagnostics.\n\nThe firmware build and host checks at 1000 Hz and 100 Hz passed. This signed beta OTA package is offered through the alpha stream and does not include a factory image. Resolution of the intermittent shared-bus fault remains subject to hardware testing.\n"
-    },
-    {
-      "version": "1.3.284",
-      "channel": "alpha",
-      "publishedAt": "2026-10-22T23:40:02Z",
-      "presentation": "automatic",
-      "compatibility": {
-        "minimumHardwareVersion": "0.2",
-        "minimumCurrentFirmwareVersion": "1.0.600",
-        "maximumHardwareVersion": "1.0"
-      },
-      "image": {
-        "url": "../releases/1.3.284/SmartBroom_OTA-1.3.284.bin",
-        "size": 819200,
-        "sha256": "4e101847a9698ce5b8709e2c869b26edef02b90e9ea8d7efb5b4501b60613c50"
-      },
-      "releaseNotes": "# SmartBroom 1.3.284 Beta\n\n- Adds a terminal I2C SCL-isolation diagnostic for a failed transaction or recovery boundary with SDA high and SCL low. Captures line levels, timestamps, controller status, and GPIO output-enable/routing registers before SDK reset or cleanup.\n- Disables the SCL output driver and overrides peripheral output-enable control, preserving the input path, pull-ups, and SDA configuration. Samples immediately after release and at approximately 2 and 10 microseconds.\n- Reports whether SCL rose after release, remained externally low, recovered before release, or failed output-disable verification. Stored `i2c.isolate` WARN logs replay every five seconds for BLE subscribers.\n- After capture, blocks I2C transfers, bus recovery, ADC power transitions, and restart pin cleanup until reboot. Suppresses automatic health-timeout restarts and power-off to preserve the evidence and BLE logging; explicit reboot remains available.\n- Retains the common 5 ms clock-stretch allowance and automatic light sleep disabled. The instrumented driver is generated inside the build directory without modifying the SDK checkout.\n\nCapture-model, driver-hook generation, shared-bus, and recovery-guard checks passed. The ESP32-C3 firmware build passed. This diagnostic intentionally halts sensor communication after capture and requires reboot to resume it. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
     }
   ]
 }
