@@ -19,6 +19,22 @@
         "sha256": "024f355d9b30728bf4e4071894fe05170b46ba0065189718b48b9883a607d6c5"
       },
       "releaseNotes": "## SmartBeam beta 1.3.12\n\n### Power and charging\n\n- Start in charging-only mode when USB powers on the device, with the laser and Bluetooth disabled.\n- Wake from charging-only mode with a fresh button press; software and OTA restarts remain active with USB attached.\n- Keep button handling responsive during shutdown by stopping Bluetooth and saving device logs in a background worker.\n- Prevent Bluetooth advertising from restarting after shutdown begins.\n- Require release of the shutdown button before accepting a new wake gesture.\n- Read USB and charger status directly, independently of battery-voltage sampling, and report charging only while USB is present.\n- Keep USB insertion during shutdown in charging-only mode and release power on unplug.\n\n### Validation\n\n- Firmware build and battery, advertising, and shutdown host checks passed.\n- Physical USB/button timing and laser behavior still require bench verification.\n"
+    },
+    {
+      "version": "1.3.50",
+      "channel": "alpha",
+      "publishedAt": "2026-10-22T00:10:44Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.3.50/SmartBeam_OTA-1.3.50.bin",
+        "size": 679936,
+        "sha256": "9e33618e02fef88850d36d6713b944b032df6477ac9cbfce3281622ce4cc663e"
+      },
+      "releaseNotes": "# SmartBeam 1.3.50 Beta\n\n- Adds shared ten-second button-hold recovery and watchdog protection, including detection of stalled beam-sensor processing.\n- Preserves responsive shutdown and USB charging-only operation when Bluetooth cleanup or log persistence stalls.\n- Releases the power latch before reporting shutdown-worker allocation failure.\n- Coordinates resets through one recovery owner with an independent reset deadline.\n- Consolidates OTA confirmation, boot selection and reboot ownership. Busy commands preserve the accepted update result, and in-flight OTA worker operations have a watchdog deadline.\n- Provides coherent cached OTA status without flash reads in status getters.\n\nFirmware build and host regression tests passed. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
     }
   ]
 }

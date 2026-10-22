@@ -173,6 +173,23 @@
         "sha256": "45dfa0e896bcb2c26dc9c8806a50250b4f131f08277b565f8ebde040f853c216"
       },
       "releaseNotes": "# SmartBroom 1.3.105 Beta\n\n- Battery gauge initialization runs in the background while other services start. Shared USB/charger detection remains available without waiting for gauge data.\n- Connecting USB from fully off starts charging play-dead. A button-triggered software restart still starts active with USB attached.\n- The battery indicator stays white while gauge data is unavailable. USB removal from charging play-dead follows the standard red power-off indication, with bounded accelerometer preparation and asynchronous Bluetooth cleanup.\n- Voltage, charge level and current refresh about every four seconds. Other capacity readings rotate through a slower polling slot.\n- BLE battery notifications report signed current changes of at least 5 mA from the last notification; smaller drift accumulates. USB, charger and current-availability changes still notify promptly.\n- Full capacity, remaining capacity and health become available independently and notify when first available or recovered. The BLE packet format and existing unknown-value encodings are unchanged.\n- Unread gauge data no longer appears as valid zero telemetry, and unknown health is logged as unknown. Current is attempted during initialization without rejecting initialization if that read fails.\n- OTA confirmation waits for required services and baseline gauge readiness; gauge recovery can complete confirmation.\n\nThis signed beta OTA package is distributed through the alpha stream for product 3.2 (SmartBroom). It does not include a factory image.\n"
+    },
+    {
+      "version": "1.3.199",
+      "channel": "alpha",
+      "publishedAt": "2026-10-22T00:10:48Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.199/SmartBroom_OTA-1.3.199.bin",
+        "size": 811008,
+        "sha256": "7b378dd8fea0e7813310794da0fb23b7666665a23ca0d432e78483374b5cbdb7"
+      },
+      "releaseNotes": "# SmartBroom 1.3.199 Beta\n\n- Adds shared ten-second button-hold recovery and watchdog protection for stalled application workers.\n- Makes shutdown preparation and Bluetooth cleanup bounded so a stalled peripheral or Bluetooth stop cannot indefinitely hold the hardware power latch.\n- Coordinates reset through one I2C cleanup owner, with a separate reset deadline that cannot be extended by stalled cleanup.\n- Consolidates OTA confirmation, boot selection and reboot ownership. Busy commands preserve the accepted update result, and in-flight OTA worker operations have a watchdog deadline.\n- Uses cached, coherent OTA status for display and Bluetooth readers.\n- Adds the optional fuel-gauge bypass at EngComm V2 power configuration address 0, bit 3 (0x08), default disabled. Enabled bypass supplies 50% SOC and 3800 mV while USB and charger inputs remain live; current, capacity and health remain unavailable.\n- Battery-status bit 3 (0x0008) identifies an active gauge bypass. Existing packet sizes and EngComm storage version remain unchanged.\n- Retains terminal ownership of force-sensor shutdown so stale configuration updates cannot restart sampling after shutdown is accepted.\n\nFirmware build and host regression tests passed. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
     }
   ]
 }

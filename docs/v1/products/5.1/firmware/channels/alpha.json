@@ -19,6 +19,22 @@
         "sha256": "14c7097ac716a09939e464a4844269affa0b67cbc1787a546b4f3b31f5c1ec37"
       },
       "releaseNotes": "# LightBroom 1.1.79 Beta\n\n- LED output now uses SPI with DMA, matching SmartBeam's output method, to address LED flicker.\n- Existing LED colours, brightness controls, animations and startup indications are retained.\n\nThis beta targets product 5.1 (LightBroom / Inner Light). It is a signed OTA update; it does not include a factory image.\n"
+    },
+    {
+      "version": "1.1.151",
+      "channel": "alpha",
+      "publishedAt": "2026-10-22T00:10:32Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.151/LightBroom_OTA-1.1.151.bin",
+        "size": 733184,
+        "sha256": "de7b7c8ffcf00737d13d04480e3c657a6309ef6b0cb80a46c3760f972e2feff1"
+      },
+      "releaseNotes": "# LightBroom 1.1.151 Beta\n\n- Adds shared ten-second button-hold recovery and watchdog protection for stalled application workers.\n- Bounds shutdown preparation and Bluetooth cleanup while preserving charging-only operation and button wake.\n- Closes I2C transaction admission before reset cleanup, recovers and releases the bus when possible, and retains an independent reset deadline if cleanup stalls.\n- Preserves standby intent across recovery resets and requires release before repeating a held-button recovery.\n- Consolidates OTA confirmation, boot selection and reboot ownership. Busy commands preserve the accepted update result, and in-flight OTA worker operations have a watchdog deadline.\n- Uses coherent cached OTA status so LED rendering no longer performs OTA flash reads.\n\nFirmware build and host regression tests passed. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
     }
   ]
 }
