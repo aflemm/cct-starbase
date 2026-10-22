@@ -241,6 +241,23 @@
         "sha256": "abb27b1ca13169a399559c2140e671165950582b2abf379afac21c477a612f62"
       },
       "releaseNotes": "# SmartBroom 1.3.250 Beta\n\n- Adds first-fault I2C diagnostics identifying device address, command/register byte, transfer lengths, requested timeout, duration, and SDA/SCL levels.\n- Records ADC AVDD enable/disable edge ages and whether an edge occurred in the transfer-to-fault capture window, without logging every power cycle.\n- Captures existing ESP-IDF timeout/error markers to distinguish reported timeout/arbitration events and software wait timeouts; unclassified failures remain explicitly unclassified.\n- Tracks the accelerometer's direct device registration so faults can identify every shared-bus client without changing its clock-stretch setting.\n- Preserves ADC AVDD duty cycling, sampling cadence and bus recovery policy for comparison with the preceding test build.\n\nFault diagnostics, deadline/recovery tests at 1000 Hz and 100 Hz, battery/startup checks, shutdown/recovery regressions, and the firmware build passed. AVDD timestamps describe GPIO edges rather than measured analog supply voltage. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
+    },
+    {
+      "version": "1.3.251",
+      "channel": "alpha",
+      "publishedAt": "2026-10-22T19:38:26Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.251/SmartBroom_OTA-1.3.251.bin",
+        "size": 815104,
+        "sha256": "84243e6c44868488b9eb0dd8609e5159b811e9d9ae156019154585cd600af31a"
+      },
+      "releaseNotes": "# SmartBroom 1.3.251 Beta\n\n- Registers the LIS2DH12 accelerometer through the shared I2C bus manager, applying the same 10 ms clock-wait allowance as the other managed accessories.\n- Uses the bus manager's automatic device diagnostic tracking instead of separate accelerometer registration bookkeeping.\n- Retains the first-fault diagnostics, ADC AVDD cycling, sampling cadence, and bus recovery policy from 1.3.250 for bench comparison.\n\nThe firmware build and OTA signature verification passed. This release closes a device-registration configuration gap; whether it resolves the intermittent shared-bus fault still requires hardware testing. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
     }
   ]
 }
