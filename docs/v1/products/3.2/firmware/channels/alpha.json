@@ -309,6 +309,23 @@
         "sha256": "1d39e51a415b73c6023fd25cf96a948116efb879333dd3e69c1e952b4acadee3"
       },
       "releaseNotes": "# SmartBroom 1.3.258 Beta\n\n- Exempts the I2C SCL pin from automatic GPIO sleep reconfiguration by calling `gpio_sleep_sel_dis(PIN_I2C_SCL_GPIO)` after power-management setup. This is the saved SCL sleep change missing from 1.3.257.\n- Retains ADC power transitions coordinated with shared I2C bus ownership, force-sampling re-anchoring after successful overruns, shared-bus recovery, and first-fault diagnostics.\n\nThis signed beta OTA package is offered through the alpha stream and does not include a factory image. Resolution of the intermittent shared-bus fault remains subject to hardware testing.\n"
+    },
+    {
+      "version": "1.3.260",
+      "channel": "alpha",
+      "publishedAt": "2026-10-22T22:46:47Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.260/SmartBroom_OTA-1.3.260.bin",
+        "size": 815104,
+        "sha256": "76184abfcd6087f09efafa65f3d8247f19b1b8b5f43ac5d47bcc4d4750c0fca3"
+      },
+      "releaseNotes": "# SmartBroom 1.3.260 Beta\n\n- Exempts both I2C pins from automatic GPIO sleep reconfiguration: SCL on GPIO 8 and SDA on GPIO 9. Adds the SDA exemption alongside the SCL exemption introduced in 1.3.258.\n- Retains ADC power transitions coordinated with shared I2C bus ownership, force-sampling re-anchoring after successful overruns, shared-bus recovery, and first-fault diagnostics.\n\nThis signed beta OTA package is offered through the alpha stream and does not include a factory image. Resolution of the intermittent shared-bus fault remains subject to hardware testing.\n"
     }
   ]
 }
