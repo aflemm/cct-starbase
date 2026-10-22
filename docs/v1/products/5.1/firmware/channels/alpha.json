@@ -35,6 +35,22 @@
         "sha256": "de7b7c8ffcf00737d13d04480e3c657a6309ef6b0cb80a46c3760f972e2feff1"
       },
       "releaseNotes": "# LightBroom 1.1.151 Beta\n\n- Adds shared ten-second button-hold recovery and watchdog protection for stalled application workers.\n- Bounds shutdown preparation and Bluetooth cleanup while preserving charging-only operation and button wake.\n- Closes I2C transaction admission before reset cleanup, recovers and releases the bus when possible, and retains an independent reset deadline if cleanup stalls.\n- Preserves standby intent across recovery resets and requires release before repeating a held-button recovery.\n- Consolidates OTA confirmation, boot selection and reboot ownership. Busy commands preserve the accepted update result, and in-flight OTA worker operations have a watchdog deadline.\n- Uses coherent cached OTA status so LED rendering no longer performs OTA flash reads.\n\nFirmware build and host regression tests passed. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
+    },
+    {
+      "version": "1.1.159",
+      "channel": "alpha",
+      "publishedAt": "2026-10-22T04:32:03Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.159/LightBroom_OTA-1.1.159.bin",
+        "size": 737280,
+        "sha256": "ee8f938709d073f13abadb8b98d4317ecb3a0bc55e48c13ba4c997b8bd294b65"
+      },
+      "releaseNotes": "# LightBroom 1.1.159 Beta\n\n- Allows the battery gauge's specified clock-stretch timing to avoid premature I2C timeouts.\n- Coordinates shared-bus recovery with a cooldown and bounded retry backoff, while keeping other devices available when an absent device releases the bus.\n- Preserves the previous gauge handle if a bus-speed change fails.\n- Keeps gauge initialization able to recover a bus fault while preserving existing command pacing and packet timeouts.\n\nBuilt from the Inner Light 1.1 branch. Shared-bus tests at 1000 Hz and 100 Hz, battery/startup tests, recovery regressions, and the firmware build passed. Electrical fault recovery has not been bench-tested. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
     }
   ]
 }
