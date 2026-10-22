@@ -224,6 +224,23 @@
         "sha256": "3e770110036b5531d60528aff70cdbd32711435094b15c1e858a859198a19d60"
       },
       "releaseNotes": "# SmartBroom 1.3.232 Beta\n\n- Allows the battery gauge's specified clock-stretch timing to avoid premature I2C timeouts.\n- Coordinates shared-bus recovery with cooldown and bounded backoff instead of repeated ADC reset attempts on a failed bus.\n- Gives ADC readiness one deadline across bus waiting and I/O. Contention timeouts preserve ADC configuration, and retries rebase the sample schedule to prevent overdue bursts.\n- Preserves the previous gauge handle if a bus-speed change fails.\n- Keeps other devices available when an absent device releases the bus, and includes initial fault and recovery diagnostics.\n\nShared-bus and ADC tests at 1000 Hz and 100 Hz, battery/startup tests, shutdown/recovery regressions, and the firmware build passed. Electrical fault recovery has not been bench-tested. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
+    },
+    {
+      "version": "1.3.250",
+      "channel": "alpha",
+      "publishedAt": "2026-10-22T19:20:33Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.250/SmartBroom_OTA-1.3.250.bin",
+        "size": 815104,
+        "sha256": "abb27b1ca13169a399559c2140e671165950582b2abf379afac21c477a612f62"
+      },
+      "releaseNotes": "# SmartBroom 1.3.250 Beta\n\n- Adds first-fault I2C diagnostics identifying device address, command/register byte, transfer lengths, requested timeout, duration, and SDA/SCL levels.\n- Records ADC AVDD enable/disable edge ages and whether an edge occurred in the transfer-to-fault capture window, without logging every power cycle.\n- Captures existing ESP-IDF timeout/error markers to distinguish reported timeout/arbitration events and software wait timeouts; unclassified failures remain explicitly unclassified.\n- Tracks the accelerometer's direct device registration so faults can identify every shared-bus client without changing its clock-stretch setting.\n- Preserves ADC AVDD duty cycling, sampling cadence and bus recovery policy for comparison with the preceding test build.\n\nFault diagnostics, deadline/recovery tests at 1000 Hz and 100 Hz, battery/startup checks, shutdown/recovery regressions, and the firmware build passed. AVDD timestamps describe GPIO edges rather than measured analog supply voltage. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
     }
   ]
 }
