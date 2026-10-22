@@ -343,6 +343,23 @@
         "sha256": "9897f792377a67e75e0770cedb41fa6fc5dcbf3e82886a20a785059f2cd8d172"
       },
       "releaseNotes": "# SmartBroom 1.3.261 Beta\n\n- Disables automatic light sleep in the power-management configuration for an I2C diagnostic test. CPU frequency scaling remains configured for 10\u2013160 MHz.\n- Comments out the individual SCL and SDA GPIO sleep exemptions used in the preceding test build.\n- Retains ADC power transitions coordinated with shared I2C bus ownership, force-sampling re-anchoring after successful overruns, shared-bus recovery, and first-fault diagnostics.\n\nThis signed beta OTA package is offered through the alpha stream and does not include a factory image. Resolution of the intermittent shared-bus fault remains subject to hardware testing.\n"
+    },
+    {
+      "version": "1.3.273",
+      "channel": "alpha",
+      "publishedAt": "2026-10-22T23:14:56Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.273/SmartBroom_OTA-1.3.273.bin",
+        "size": 815104,
+        "sha256": "ea0334c7ef5af14c40eff1e71428facd1f6c731cf168283451d80464f925735d"
+      },
+      "releaseNotes": "# SmartBroom 1.3.273 Beta\n\n- Requests a 5 ms I2C clock-stretch allowance for the BQ27427 fuel gauge (address 0x55), and 1 ms for the ADC, RTC, and accelerometer. These settings apply to initial registration and replacement handles when device speed changes.\n- Retains automatic light sleep disabled, coordinated ADC power transitions, force-sampling re-anchoring after successful overruns, shared-bus recovery, and first-fault diagnostics.\n\nThe firmware build and host checks at 1000 Hz and 100 Hz passed. This packages the existing local bench build for continued alpha testing; resolution of the intermittent shared-bus fault remains subject to hardware testing. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
     }
   ]
 }
