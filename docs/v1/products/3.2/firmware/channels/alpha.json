@@ -496,6 +496,23 @@
         "sha256": "230dfb3d07bbd46de2b86729b060a95af859859328fbb04622022844cbba8893"
       },
       "releaseNotes": "# SmartBroom 1.3.399 Beta\n\n- Add gauge configuration revision 1 for the SmartBroom 1.3 settings. Devices without a matching completed migration perform full configuration/readback and resealing before recording success.\n- Speed up subsequent boots: a matching revision plus sealed, ready, reset-free gauge state allows the short identity/readiness path, skipping unsealing and slow data-memory inspection. Revision zero is persisted before configuration changes so failed or interrupted migrations retry.\n- Return normal fuel-gauge communication to the board-defined 400 kHz, matching other I2C devices. Bootstrap remains at 100 kHz.\n- Label the hardware-verified Chemistry Data subclass 109 fields directly as V at Chg Term (offset 6) and Taper Voltage (offset 8). Both remain read-only.\n\nShared battery/consumer host tests pass, including migration failure handling, NVS errors, revision changes, reset/stale/unsealed states, and fast boot. SmartBroom and Inner Light firmware builds passed. Hardware logs show the retained-gauge fast path at 2.966 seconds, gauge ready at 3.517 seconds, and battery state published at 4.067 seconds, with runtime speed confirmed at 400 kHz.\n\nThe persisted value is a single completed configuration revision, not a fingerprint. It assumes no external gauge reconfiguration between boots. Signed development OTA package for the Alpha stream; no factory image. Existing gauge tuning and EngComm controls from 1.3.392 are retained.\n"
+    },
+    {
+      "version": "1.3.414",
+      "channel": "alpha",
+      "publishedAt": "2026-10-23T22:30:16Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.414/SmartBroom_OTA-1.3.414.bin",
+        "size": 823296,
+        "sha256": "fd1b540ff986a7010e3bbd264174e83fd359ccc6a30e9942f4919dffec8bf312"
+      },
+      "releaseNotes": "# SmartBroom 1.3.414 Beta\n\n- Persist the active battery profile ID and configuration revision together in NVS. Changing either forces gauge reconfiguration, including switching back to an earlier profile with the same revision.\n- Upgrade revision-only records through one full migration. Pending migrations cannot enable fast boot; matching completed profiles retain the short sealed/ready gauge startup path.\n- Coordinate shared I2C access with the gauge configuration deadline. RTC reads use anchored time during gauge configuration and retain fault handling for real chip-read failures.\n- Retain board-defined 400 kHz gauge operation and 100 kHz bootstrap speed. Inner Light continues to select the existing profile pending its separate battery settings.\n\nValidation: shared battery migration and consumer tests, I2C deadline/recovery tests, and RTC contention tests passed. SmartBroom 1.3.414 and Inner Light 1.1.37 firmware builds passed. Device validation is pending.\n\nSigned development OTA package for the Alpha stream; no factory image.\n"
     }
   ]
 }
