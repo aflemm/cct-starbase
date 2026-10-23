@@ -479,6 +479,23 @@
         "sha256": "575ad78132514624f4ff4f7f3b4f17766e2683f5f4569cb29bd18be7265075df"
       },
       "releaseNotes": "# SmartBroom 1.3.392 Beta\n\n- Configure the fuel gauge discharge/charge/quit thresholds as 8/30/5 mA (encoded 375/100/600) and Taper Rate as 87 (approximately 34.48 mA). Read and log existing values, update retained gauges, and verify readback. Preserve relax times, learned charge voltage, and Taper Voltage.\n- Retain primary charge termination (FC Set -1), Load Select/Mode 0x81, and the 2-second termination-valid time, with existing 300 mAh / 1110 mWh / 3300 mV / CHEM_B / 5 mA sleep settings.\n- Remove the zero Delta Voltage experiment. Restore factory learning bounds (0\u2013200 mV) and initial Delta Voltage (1 mV) when legacy zero bounds are detected; preserve normal learned values afterward.\n- Add EngComm Power Configuration bit 4 (0x10): Enable voltage SOC fallback. Default is off, reporting raw gauge SOC; enabling permits fallback after collapse while not charging.\n- Add EngComm Power Configuration bit 5 (0x20): Disable force sensor idle power saving. Default is off; setting it keeps analog 3.3 V on between acquisitions without changing sample cadence. Sampling disable and shutdown still power off the rail.\n\nPower Configuration default remains 7. Use 23 (0x17) for voltage SOC fallback with the default flags, 39 (0x27) to disable force idle rail cycling with the default flags, or 55 (0x37) for both.\n\nShared battery/consumer, force acquisition power-control, and EngComm/autotare host tests pass. Signed development OTA package for the Alpha stream; no factory image. Full gauge boot verification remains in place; the canceled NVS fingerprint/fast-boot feature is not included. Charge-termination behavior under actual system load remains subject to hardware validation.\n"
+    },
+    {
+      "version": "1.3.399",
+      "channel": "alpha",
+      "publishedAt": "2026-10-23T22:04:41Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.399/SmartBroom_OTA-1.3.399.bin",
+        "size": 823296,
+        "sha256": "230dfb3d07bbd46de2b86729b060a95af859859328fbb04622022844cbba8893"
+      },
+      "releaseNotes": "# SmartBroom 1.3.399 Beta\n\n- Add gauge configuration revision 1 for the SmartBroom 1.3 settings. Devices without a matching completed migration perform full configuration/readback and resealing before recording success.\n- Speed up subsequent boots: a matching revision plus sealed, ready, reset-free gauge state allows the short identity/readiness path, skipping unsealing and slow data-memory inspection. Revision zero is persisted before configuration changes so failed or interrupted migrations retry.\n- Return normal fuel-gauge communication to the board-defined 400 kHz, matching other I2C devices. Bootstrap remains at 100 kHz.\n- Label the hardware-verified Chemistry Data subclass 109 fields directly as V at Chg Term (offset 6) and Taper Voltage (offset 8). Both remain read-only.\n\nShared battery/consumer host tests pass, including migration failure handling, NVS errors, revision changes, reset/stale/unsealed states, and fast boot. SmartBroom and Inner Light firmware builds passed. Hardware logs show the retained-gauge fast path at 2.966 seconds, gauge ready at 3.517 seconds, and battery state published at 4.067 seconds, with runtime speed confirmed at 400 kHz.\n\nThe persisted value is a single completed configuration revision, not a fingerprint. It assumes no external gauge reconfiguration between boots. Signed development OTA package for the Alpha stream; no factory image. Existing gauge tuning and EngComm controls from 1.3.392 are retained.\n"
     }
   ]
 }
