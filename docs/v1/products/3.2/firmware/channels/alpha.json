@@ -411,6 +411,23 @@
         "sha256": "cc829edc3d728b6b9af1f60a93b107aa8f41daae0ffa25434d17e50424549902"
       },
       "releaseNotes": "# SmartBroom 1.3.325 Beta\n\n- Run the fuel gauge at 100 kHz during normal operation and initialization. The ADC and accelerometer remain at 400 kHz, with the existing unified 5 ms clock-stretch allowance.\n- Give fast force acquisition priority: pause fuel-gauge polling when enabled force sampling is 30 ms or faster, including raw broadcasts. Resume at the normal polling cadence when force sampling returns to power save or is disabled, without a catch-up burst.\n- Retain cached battery readings during a polling pause. USB and charger GPIO status continue updating independently. Accelerometer activity does not control gauge scheduling.\n- Defer gauge initialization and retries during fast force sampling, and cancel queued gauge operations before further packets are submitted. Packets already admitted may finish.\n- Bench indicators: battery LED blue while gauge polling is paused; fault LED blue in force power-save/disabled mode and off in full-speed mode. These replace normal battery/fault indications during ordinary operation; shutdown and play-dead retain their existing behavior.\n- Add INFO logs for force polling mode/period and gauge pause/resume transitions.\n\nBuilt from `experiment/smartbroom-gauge-100k-idle-polling`, based on the SmartBroom 1.3 working branch. Uses the standard ESP-IDF driver and normal recovery, without the earlier SCL-isolation diagnostic, completion-ISR instrumentation or experimental 100 us bus gap. Automatic light sleep remains disabled.\n\nValidation: battery scheduling/cache/live-GPIO, admission cancellation, deferred initialization, battery consumer and force-mode lifecycle host checks passed. Firmware build passed. This signed beta OTA image is distributed through the alpha stream; no factory image is included.\n"
+    },
+    {
+      "version": "1.3.336",
+      "channel": "alpha",
+      "publishedAt": "2026-10-23T17:25:48Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.336/SmartBroom_OTA-1.3.336.bin",
+        "size": 815104,
+        "sha256": "e395cfc1793e3115be0ad561b19d3f04e0d0bc1ea9adf2f9ed1d87b28aeb3eb2"
+      },
+      "releaseNotes": "# SmartBroom 1.3.336 Beta\n\n- Detect collapsed fuel-gauge estimates when battery voltage is above 3.35 V and SOC is 1% or less or remaining capacity is 1 mAh or less.\n- Attempt one gauge reset and reinitialization at startup to correct a collapsed estimate, within the existing initialization timeout.\n- Use an approximate voltage-based SOC estimate while not charging after a collapse. Keep the fallback latched through low voltage and gauge retries; pass through gauge SOC while charging.\n- Preserve raw gauge diagnostic telemetry and log collapse detection, boot recovery, and fallback transitions.\n\nShared battery host tests and existing consumer checks passed before this build. Signed development OTA package for the Alpha stream; no factory image or hardware flashing. The voltage fallback is an approximate lithium-ion model and has not been calibrated against this cell under all loads and temperatures.\n"
     }
   ]
 }
