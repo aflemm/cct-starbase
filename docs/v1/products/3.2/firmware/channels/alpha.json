@@ -394,6 +394,23 @@
         "sha256": "2fdb798683fa9b0cce0c18312d0c270128fe502f96d51c9ae1c021908c0d027a"
       },
       "releaseNotes": "# SmartBroom 1.3.289 Beta\n\n- Built from the SmartBroom 1.3 development branch with a unified 5 ms requested clock-stretch allowance for the fuel gauge, ADC, RTC, and accelerometer. Initial registration and replacement handles use the same allowance.\n- Uses the standard ESP-IDF I2C driver and normal bus recovery. The experimental SCL-isolation halt and live pin monitoring are not included.\n- Retains the development branch's existing ADC power coordination, force-sampling overrun handling, fault logging, and disabled automatic light sleep.\n\nShared-bus host checks passed at 1000 Hz and 100 Hz. This beta is built from a fresh build directory and is offered through the alpha stream as a signed OTA image; it does not include a factory image.\n"
+    },
+    {
+      "version": "1.3.325",
+      "channel": "alpha",
+      "publishedAt": "2026-10-23T16:30:57Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.325/SmartBroom_OTA-1.3.325.bin",
+        "size": 815104,
+        "sha256": "cc829edc3d728b6b9af1f60a93b107aa8f41daae0ffa25434d17e50424549902"
+      },
+      "releaseNotes": "# SmartBroom 1.3.325 Beta\n\n- Run the fuel gauge at 100 kHz during normal operation and initialization. The ADC and accelerometer remain at 400 kHz, with the existing unified 5 ms clock-stretch allowance.\n- Give fast force acquisition priority: pause fuel-gauge polling when enabled force sampling is 30 ms or faster, including raw broadcasts. Resume at the normal polling cadence when force sampling returns to power save or is disabled, without a catch-up burst.\n- Retain cached battery readings during a polling pause. USB and charger GPIO status continue updating independently. Accelerometer activity does not control gauge scheduling.\n- Defer gauge initialization and retries during fast force sampling, and cancel queued gauge operations before further packets are submitted. Packets already admitted may finish.\n- Bench indicators: battery LED blue while gauge polling is paused; fault LED blue in force power-save/disabled mode and off in full-speed mode. These replace normal battery/fault indications during ordinary operation; shutdown and play-dead retain their existing behavior.\n- Add INFO logs for force polling mode/period and gauge pause/resume transitions.\n\nBuilt from `experiment/smartbroom-gauge-100k-idle-polling`, based on the SmartBroom 1.3 working branch. Uses the standard ESP-IDF driver and normal recovery, without the earlier SCL-isolation diagnostic, completion-ISR instrumentation or experimental 100 us bus gap. Automatic light sleep remains disabled.\n\nValidation: battery scheduling/cache/live-GPIO, admission cancellation, deferred initialization, battery consumer and force-mode lifecycle host checks passed. Firmware build passed. This signed beta OTA image is distributed through the alpha stream; no factory image is included.\n"
     }
   ]
 }
