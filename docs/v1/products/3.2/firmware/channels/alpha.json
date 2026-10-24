@@ -581,6 +581,23 @@
         "sha256": "9b2ec0c3acfb22fe0b11934afc7e65e6a0edde7f48ee735487f3b30b37d82c66"
       },
       "releaseNotes": "# SmartBroom 1.3.483 Beta\n\n- Disable NimBLE's standard BLE pairing/security manager (SMP), including legacy pairing and Secure Connections support. Retain SmartBroom's application-level ownership behavior and signed OTA verification.\n- Continue using ESP-IDF 6.1 and the existing 100 ms motion polling interval.\n- Reduce the unsigned application image by 113,840 bytes compared with 1.3.468, to 728,016 bytes (approximately 46% of the OTA app partition).\n\nValidation: ESP-IDF 6.1 build 1.3.483 and all 11 SmartBroom/shared-component host regression runners passed. Fresh development and production configuration generation confirms NimBLE security is disabled; production Secure Boot and signed-image settings remain enabled. Image metadata and the compiled configuration were verified before packaging.\n\nLive BLE connection and on-device OTA validation remain pending. No device was flashed during these tests.\n\nSigned development OTA package for the Alpha stream; no factory image.\n"
+    },
+    {
+      "version": "1.3.488",
+      "channel": "alpha",
+      "publishedAt": "2026-10-24T18:46:18Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.488/SmartBroom_OTA-1.3.488.bin",
+        "size": 733184,
+        "sha256": "64a3869f068fb606daf8bdd9ac33e19e41b5dfb0033c1322e20118a4e61b0807"
+      },
+      "releaseNotes": "# SmartBroom 1.3.488 Beta\n\n- Capture the original failed I2C transaction and its device address, command, timing, line levels, SDK timeout markers, and ADC AVDD context when ESP-IDF returns `ESP_ERR_INVALID_RESPONSE` for a timeout or arbitration event.\n- Start shared-bus cooldown and recovery from that original failure, including invalid-response failures with SDA or SCL held low. Preserve ordinary device NACK isolation, existing recovery backoff, and quiet healthy operation.\n- Use the current esptool `write-flash` command spelling in the managed USB flashing tool.\n\nAVDD sequencing, sampling cadence, fuel-gauge commands, and bus speeds are unchanged. This improves fault detection and recovery; the initiating cause of the intermittent two-second SCL-low condition remains unconfirmed.\n\nValidation: SmartBroom 1.3.488 built successfully with ESP-IDF 6.1. Shared-bus/SmartBroom ADC host regressions passed at 1000 Hz and 100 Hz, including original-failure capture, timeout evidence with released lines, stuck-line handling, cooldown, failed/successful recovery, and NACK isolation. All 17 firmware-session tests passed. Build dependency timestamps were checked before packaging. Bench testing of this build has reported no I2C errors so far; intermittent faults previously took minutes to hours to occur, so this does not establish a root-cause fix. On-device OTA validation remains pending.\n\nSigned development OTA package for the Alpha stream; no factory image.\n"
     }
   ]
 }
