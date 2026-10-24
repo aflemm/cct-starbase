@@ -547,6 +547,23 @@
         "sha256": "b6d2e30aa001bd95a67c5484c132bbedb6642a9e2ac29d9b9061f9b129764488"
       },
       "releaseNotes": "# SmartBroom 1.3.443 Beta\n\n- Initialize live USB/charging inputs first, then RTC and motion, before launching background fuel-gauge configuration. Retain asynchronous gauge migration, runtime monitoring and RTC recovery.\n- Remove the duplicate initial RTC calendar read: the MCP7940 driver attaches its transport, while the RTC service owns reading, validation and retries.\n- Distinguish starting, ready and failed startup states. Combine synchronous setup results with live gauge/RTC hardware state, BLE readiness and recovery health before confirming an OTA image. An unset calendar still requires synchronization for recording, but is distinct from failed RTC hardware.\n- Propagate motion, battery-worker, RTC-recovery, device-log, bondage, notification, sweep/file-callback and transfer-manager setup failures into readiness checks.\n- Remove redundant startup state clears and add phase durations, elapsed setup time and readiness-transition logs. Preserve gauge fault indication when battery setup cannot provide a snapshot.\n\nValidation: shared battery/migration and consumer tests, RTC driver/service integration and recovery tests, startup readiness tests, actual main startup ordering/timing tests, application-service failure tests and lifecycle tests passed. SmartBroom 1.3.443 and Inner Light 1.1.38 firmware builds passed. Hardware timing verification remains pending.\n\nSigned development OTA package for the Alpha stream; no factory image.\n"
+    },
+    {
+      "version": "1.3.468",
+      "channel": "alpha",
+      "publishedAt": "2026-10-24T03:09:29Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.468/SmartBroom_OTA-1.3.468.bin",
+        "size": 847872,
+        "sha256": "5a874974915bb857bdd1276801980033ebee5be2bd8be13d52b7b3a5aa9a9275"
+      },
+      "releaseNotes": "# SmartBroom 1.3.468 Beta\n\n- Migrate the ESP32-C3 firmware from ESP-IDF 5.5.1 to ESP-IDF 6.1, including regenerated configuration, explicit driver and heap dependencies, and updated FreeRTOS delay calls.\n- Preserve the board-specific 4 MiB external flash capacity workaround and use the public API for reading flash capacity.\n- Preserve the 100 ms motion polling interval.\n- Select ESP-IDF 6.1 explicitly in SmartBroom's VS Code tasks. Reject a mismatched flash environment before accessing the device, with instructions to select the correct SDK.\n\nValidation: clean ESP-IDF 6.1 firmware build passed. Existing SmartBroom and shared-component host regression suites passed during migration; all 17 flash-session and VS Code task tests passed. Fresh development and production configurations were checked, including production signing settings. The application occupies approximately 54% of its OTA partition.\n\nHardware validation of BLE, sensors, external flash, idle power, shutdown/wake, and signed OTA update/confirmation/rollback remains pending.\n\nSigned development OTA package for the Alpha stream; no factory image.\n"
     }
   ]
 }
