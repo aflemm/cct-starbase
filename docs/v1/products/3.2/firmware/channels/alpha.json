@@ -530,6 +530,23 @@
         "sha256": "b76d7977f2b70dd36b1ebaf4889e0d5664b327f3b550c2e3a033c3bb9757244a"
       },
       "releaseNotes": "# SmartBroom 1.3.416 Beta\n\n- Retry RTC startup up to four times, 250 ms apart, instead of permanently rejecting the first implausible date.\n- Recover asynchronously once per second after startup remains pending. Defer RTC bus access while fuel-gauge configuration is active, including long migration windows.\n- Publish a timestamp anchor and restore recording readiness automatically when a valid RTC reading becomes available. Keep existing anchored time available during gauge configuration when the clock is already valid.\n- Reuse the RTC I2C handle across initialization retries. Distinguish pending startup from initialization failure in boot logs and retain genuine communication fault latching.\n\nValidation: RTC startup/recovery and contention tests passed, including transient year 2001 readings, a simulated 65-second gauge window, autonomous recovery, timestamp-anchor restoration, app-sync completion and communication fault latching. SmartBroom 1.3.416 firmware build passed. Hardware validation remains pending.\n\nSigned development OTA package for the Alpha stream; no factory image.\n"
+    },
+    {
+      "version": "1.3.443",
+      "channel": "alpha",
+      "publishedAt": "2026-10-24T00:30:38Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.443/SmartBroom_OTA-1.3.443.bin",
+        "size": 823296,
+        "sha256": "b6d2e30aa001bd95a67c5484c132bbedb6642a9e2ac29d9b9061f9b129764488"
+      },
+      "releaseNotes": "# SmartBroom 1.3.443 Beta\n\n- Initialize live USB/charging inputs first, then RTC and motion, before launching background fuel-gauge configuration. Retain asynchronous gauge migration, runtime monitoring and RTC recovery.\n- Remove the duplicate initial RTC calendar read: the MCP7940 driver attaches its transport, while the RTC service owns reading, validation and retries.\n- Distinguish starting, ready and failed startup states. Combine synchronous setup results with live gauge/RTC hardware state, BLE readiness and recovery health before confirming an OTA image. An unset calendar still requires synchronization for recording, but is distinct from failed RTC hardware.\n- Propagate motion, battery-worker, RTC-recovery, device-log, bondage, notification, sweep/file-callback and transfer-manager setup failures into readiness checks.\n- Remove redundant startup state clears and add phase durations, elapsed setup time and readiness-transition logs. Preserve gauge fault indication when battery setup cannot provide a snapshot.\n\nValidation: shared battery/migration and consumer tests, RTC driver/service integration and recovery tests, startup readiness tests, actual main startup ordering/timing tests, application-service failure tests and lifecycle tests passed. SmartBroom 1.3.443 and Inner Light 1.1.38 firmware builds passed. Hardware timing verification remains pending.\n\nSigned development OTA package for the Alpha stream; no factory image.\n"
     }
   ]
 }
