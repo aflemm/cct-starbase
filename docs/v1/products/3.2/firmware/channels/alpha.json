@@ -598,6 +598,23 @@
         "sha256": "64a3869f068fb606daf8bdd9ac33e19e41b5dfb0033c1322e20118a4e61b0807"
       },
       "releaseNotes": "# SmartBroom 1.3.488 Beta\n\n- Capture the original failed I2C transaction and its device address, command, timing, line levels, SDK timeout markers, and ADC AVDD context when ESP-IDF returns `ESP_ERR_INVALID_RESPONSE` for a timeout or arbitration event.\n- Start shared-bus cooldown and recovery from that original failure, including invalid-response failures with SDA or SCL held low. Preserve ordinary device NACK isolation, existing recovery backoff, and quiet healthy operation.\n- Use the current esptool `write-flash` command spelling in the managed USB flashing tool.\n\nAVDD sequencing, sampling cadence, fuel-gauge commands, and bus speeds are unchanged. This improves fault detection and recovery; the initiating cause of the intermittent two-second SCL-low condition remains unconfirmed.\n\nValidation: SmartBroom 1.3.488 built successfully with ESP-IDF 6.1. Shared-bus/SmartBroom ADC host regressions passed at 1000 Hz and 100 Hz, including original-failure capture, timeout evidence with released lines, stuck-line handling, cooldown, failed/successful recovery, and NACK isolation. All 17 firmware-session tests passed. Build dependency timestamps were checked before packaging. Bench testing of this build has reported no I2C errors so far; intermittent faults previously took minutes to hours to occur, so this does not establish a root-cause fix. On-device OTA validation remains pending.\n\nSigned development OTA package for the Alpha stream; no factory image.\n"
+    },
+    {
+      "version": "1.3.518",
+      "channel": "alpha",
+      "publishedAt": "2026-10-25T18:33:48Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.518/SmartBroom_OTA-1.3.518.bin",
+        "size": 733184,
+        "sha256": "84e54465b7eb8ebaa99f440cf308b63c56679948d4b8b8e878d4917291944b75"
+      },
+      "releaseNotes": "# SmartBroom 1.3.518 Beta\n\n- Report the BQ27427 native StateOfHealth percentage directly instead of calculating health from capacity.\n- Retain the last successful battery readings through individual I2C read failures. The existing driver failure threshold controls gauge unavailability; no additional cache timeout is added.\n- Replace SOC-zero automatic shutdown with controlled shutdown below 3350 mV using a valid, positive gauge voltage while on battery and not charging. Flash the battery LED red for one second, set system-status byte 0 bit 6, and immediately request a BLE State notification before normal shutdown. USB/charging or a live configuration disable cancels the warning before commitment.\n- Add default-enabled EngComm power bit 6 for low-battery shutdown. Migrate existing V1/V2 settings to V3 once while preserving other preferences; an explicitly saved disable remains disabled on subsequent boots.\n- Set gauge discharge detection to 5 mA, Quit Current to 3 mA, and Sleep Current to 1 mA. Gauge configuration revision 3 applies these targets to retained gauges. Charge detection remains 30 mA and Taper Rate remains 87 (34.48 mA).\n- Remove the unshipped Delta Voltage override migration. Delta Voltage and its learning bounds remain untouched.\n\nForce sensor power-switching behavior and Load Select/Mode (0x81) are unchanged.\n\nValidation: ESP-IDF 6.1 development build 1.3.518 completed successfully. Host regressions passed during development for battery polling and retained readings, native health passthrough, gauge target programming/readback and revision updates, low-battery warning and notification sequencing, EngComm defaults/persistence, and normal shutdown. Hardware validation of the new shutdown and gauge settings remains pending.\n\nSigned development OTA package for the Alpha stream; no factory image. Build provenance and the effective sdkconfig are included with the firmware-repository package.\n"
     }
   ]
 }
