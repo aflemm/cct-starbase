@@ -649,6 +649,23 @@
         "sha256": "ccf20c0d450cc7d5265458b898ce0ce7eb754be0b7fa259a353b08ca8e8ce3ea"
       },
       "releaseNotes": "# SmartBroom 1.3.535 Beta\n\n- Remove the legacy ten-consecutive-read-failure cutoff, failure-counter API, and read-triggered fuel-gauge reinitialization/reset path.\n- Keep established gauge readiness and the last successful readings through runtime communication failures, continuing the normal polling schedule. Raw gauge SOC also remains available during extended outages; voltage-derived SOC fallback retains its existing input-freshness checks.\n- Simplify failed-read messages to report the field and error without the misleading `(1/10)` counter.\n\nInitial gauge setup and its retries, bounded I2C transaction timeouts, and shared-bus recovery remain intact. Taper Rate remains 250 (12 mA for the 300 mAh battery), with gauge configuration revision 4.\n\nValidation: ESP-IDF 6.1 development build 1.3.535. Host regressions passed during development, including 300 consecutive failed driver reads and an extended monitor outage without gauge initialization probes or resets; cached telemetry and timestamps remain stable, and successful polling resumes when communication returns. Existing initialization, gauge configuration/readback, battery notification, bypass, and startup-confirmation regressions passed. On-device validation remains pending.\n\nSigned development OTA package for the Alpha stream; no factory image. Build provenance and the effective sdkconfig are included with the firmware-repository package.\n"
+    },
+    {
+      "version": "1.3.545",
+      "channel": "alpha",
+      "publishedAt": "2026-10-27T18:56:40Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.545/SmartBroom_OTA-1.3.545.bin",
+        "size": 733184,
+        "sha256": "91e93fa10cb566d6ca7da743aadaf9576de205eb56093879e1fe226b73a9c8b6"
+      },
+      "releaseNotes": "# SmartBroom 1.3.545 Beta \u2014 Fuel-gauge sleep test\n\n- Disable automatic BQ27427 sleep by clearing the OpConfig SLEEP bit through the battery profile configuration.\n- Apply gauge configuration revision 5 so gauges retaining the previous configuration receive and verify the change. Preserve all unrelated OpConfig bits and the existing 1 mA Sleep Current setting.\n- Restore normal polling and inactivity behavior; this build does not contain the continuous 2 ms polling experiment.\n\nTaper Rate remains 250, discharge detection 5 mA, and Quit Current 3 mA. Runtime read failures continue to retain the last successful readings without the removed legacy ten-failure reset path.\n\nValidation: battery host tests passed for sleep disable/enable, neighboring-bit preservation, retained revision-4 to revision-5 configuration, and rejection of ignored configuration writes. ESP-IDF SmartBroom build passed. Long-run hardware and OTA testing remain pending.\n\nThe gauge configuration persists across firmware changes. Returning to older normal firmware alone will not re-enable gauge sleep: explicitly enable sleep using a newer configuration revision and complete gauge initialization before restoring normal firmware.\n\nSigned development OTA package for the Alpha stream; no factory image. Build provenance and the effective sdkconfig are included with the firmware-repository package.\n"
     }
   ]
 }
