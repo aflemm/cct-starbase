@@ -51,6 +51,22 @@
         "sha256": "ee8f938709d073f13abadb8b98d4317ecb3a0bc55e48c13ba4c997b8bd294b65"
       },
       "releaseNotes": "# LightBroom 1.1.159 Beta\n\n- Allows the battery gauge's specified clock-stretch timing to avoid premature I2C timeouts.\n- Coordinates shared-bus recovery with a cooldown and bounded retry backoff, while keeping other devices available when an absent device releases the bus.\n- Preserves the previous gauge handle if a bus-speed change fails.\n- Keeps gauge initialization able to recover a bus fault while preserving existing command pacing and packet timeouts.\n\nBuilt from the Inner Light 1.1 branch. Shared-bus tests at 1000 Hz and 100 Hz, battery/startup tests, recovery regressions, and the firmware build passed. Electrical fault recovery has not been bench-tested. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
+    },
+    {
+      "version": "1.1.185",
+      "channel": "alpha",
+      "publishedAt": "2026-10-27T21:19:25Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.185/LightBroom_OTA-1.1.185.bin",
+        "size": 745472,
+        "sha256": "8f4d027f73536a6d595b7872947806ba23822e1cfa3aaca34641ae7c5f6001c7"
+      },
+      "releaseNotes": "# LightBroom 1.1.185 Beta\n\n- Includes charging-only USB startup, asynchronous battery telemetry, SPI/DMA LED output and the revised Cylon/SOC startup presentation.\n- Adds explicit startup readiness and phase timing, and blocks OTA confirmation when accelerometer or migration setup fails.\n- Coordinates Bluetooth startup and shutdown while preserving independent power release, button wake and charging indication.\n- Uses the latest shared components from SmartBroom, including battery and I2C recovery improvements.\n\nBuilt from the November firmware integration source at commit 22b8917. All three product firmware builds and eight focused startup/shutdown host regression runners passed. Hardware verification has not been performed for this update. This signed beta OTA package is distributed through the alpha stream and contains no factory image.\n"
     }
   ]
 }

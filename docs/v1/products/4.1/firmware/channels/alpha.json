@@ -35,6 +35,22 @@
         "sha256": "9e33618e02fef88850d36d6713b944b032df6477ac9cbfce3281622ce4cc663e"
       },
       "releaseNotes": "# SmartBeam 1.3.50 Beta\n\n- Adds shared ten-second button-hold recovery and watchdog protection, including detection of stalled beam-sensor processing.\n- Preserves responsive shutdown and USB charging-only operation when Bluetooth cleanup or log persistence stalls.\n- Releases the power latch before reporting shutdown-worker allocation failure.\n- Coordinates resets through one recovery owner with an independent reset deadline.\n- Consolidates OTA confirmation, boot selection and reboot ownership. Busy commands preserve the accepted update result, and in-flight OTA worker operations have a watchdog deadline.\n- Provides coherent cached OTA status without flash reads in status getters.\n\nFirmware build and host regression tests passed. This signed beta OTA package is offered through the alpha stream and does not include a factory image.\n"
+    },
+    {
+      "version": "1.3.65",
+      "channel": "alpha",
+      "publishedAt": "2026-10-27T21:19:24Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.3.65/SmartBeam_OTA-1.3.65.bin",
+        "size": 679936,
+        "sha256": "fada69b24d1f552f0be89b0fed011bccbeff06d6cce7acbb311208f67e9fa163"
+      },
+      "releaseNotes": "# SmartBeam 1.3.65 Beta\n\n- Includes responsive shutdown, USB charging-only startup, button-hold recovery and beam-worker watchdog protection.\n- Adds explicit startup readiness and phase timing; a slow successful Bluetooth startup can now complete OTA confirmation.\n- Checks battery ADC and worker initialization and requires a recent calibrated reading before OTA confirmation. Failed reads retain cached telemetry without publishing a false empty battery.\n- Keeps the laser disabled when startup power status is unavailable.\n\nBuilt from the November firmware integration source at commit 22b8917. All three product firmware builds and eight focused startup/shutdown host regression runners passed. Hardware verification has not been performed for this update. This signed beta OTA package is distributed through the alpha stream and contains no factory image.\n"
     }
   ]
 }
