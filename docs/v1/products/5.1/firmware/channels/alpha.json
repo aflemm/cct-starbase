@@ -67,6 +67,22 @@
         "sha256": "8f4d027f73536a6d595b7872947806ba23822e1cfa3aaca34641ae7c5f6001c7"
       },
       "releaseNotes": "# LightBroom 1.1.185 Beta\n\n- Includes charging-only USB startup, asynchronous battery telemetry, SPI/DMA LED output and the revised Cylon/SOC startup presentation.\n- Adds explicit startup readiness and phase timing, and blocks OTA confirmation when accelerometer or migration setup fails.\n- Coordinates Bluetooth startup and shutdown while preserving independent power release, button wake and charging indication.\n- Uses the latest shared components from SmartBroom, including battery and I2C recovery improvements.\n\nBuilt from the November firmware integration source at commit 22b8917. All three product firmware builds and eight focused startup/shutdown host regression runners passed. Hardware verification has not been performed for this update. This signed beta OTA package is distributed through the alpha stream and contains no factory image.\n"
+    },
+    {
+      "version": "1.1.192",
+      "channel": "alpha",
+      "publishedAt": "2026-10-28T19:36:54Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.192/LightBroom_OTA-1.1.192.bin",
+        "size": 745472,
+        "sha256": "ebb39fd68937083a747eb060675f72dc90df1d89b4d8d83ff16f813154e17f1c"
+      },
+      "releaseNotes": "# LightBroom 1.1.192 Beta\n\n- Keeps charge completion latched for the USB connection through SOC dips and charger maintenance cycling.\n- Shows a steady full green SOC bar after completion and keeps the 30-minute play-dead dark timer progressing through SOC dips.\n- Clears completion when USB is removed; measured battery telemetry remains unchanged.\n\nSigned beta OTA package for distribution through the alpha stream. Host regression tests passed for the battery changes; hardware validation has not been performed. Source, build configuration, release notes, signed artifacts and checksums are committed together in the firmware repository.\n"
     }
   ]
 }

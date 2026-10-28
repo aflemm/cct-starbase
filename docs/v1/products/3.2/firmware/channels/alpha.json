@@ -700,6 +700,23 @@
         "sha256": "7f42d8504451293d27a53f0ece73157aee28e0804535e4dce2c93ad47cf09d88"
       },
       "releaseNotes": "# SmartBroom 1.3.565 Beta\n\n- Combines the November firmware work while retaining the latest SmartBroom shared components.\n- Checks power-hold and GPIO interrupt startup and coordinates Bluetooth startup with shutdown without blocking power release.\n- Keeps essential setup, live gauge/RTC readiness, worker health and radio readiness required for OTA confirmation; optional diagnostic log failures no longer reject otherwise functional firmware.\n\nBuilt from the November firmware integration source at commit 22b8917. All three product firmware builds and eight focused startup/shutdown host regression runners passed. Hardware verification has not been performed for this update. This signed beta OTA package is distributed through the alpha stream and contains no factory image.\n"
+    },
+    {
+      "version": "1.3.572",
+      "channel": "alpha",
+      "publishedAt": "2026-10-28T19:36:51Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.572/SmartBroom_OTA-1.3.572.bin",
+        "size": 737280,
+        "sha256": "46f88c005db4732f308a611e0be16403fb61d940d2ce3554c59b07579fd14fba"
+      },
+      "releaseNotes": "# SmartBroom 1.3.572 Beta\n\n- Keeps charge completion latched for the USB connection through SOC dips and charger maintenance cycling.\n- Uses retained completion for the 30-minute play-dead dark timer, including completion reached while active.\n- Clears completion when USB is removed; measured battery telemetry remains unchanged.\n\nSigned beta OTA package for distribution through the alpha stream. Host regression tests passed for the battery changes; hardware validation has not been performed. Source, build configuration, release notes, signed artifacts and checksums are committed together in the firmware repository.\n"
     }
   ]
 }

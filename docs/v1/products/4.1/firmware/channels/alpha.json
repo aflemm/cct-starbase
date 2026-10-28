@@ -51,6 +51,22 @@
         "sha256": "fada69b24d1f552f0be89b0fed011bccbeff06d6cce7acbb311208f67e9fa163"
       },
       "releaseNotes": "# SmartBeam 1.3.65 Beta\n\n- Includes responsive shutdown, USB charging-only startup, button-hold recovery and beam-worker watchdog protection.\n- Adds explicit startup readiness and phase timing; a slow successful Bluetooth startup can now complete OTA confirmation.\n- Checks battery ADC and worker initialization and requires a recent calibrated reading before OTA confirmation. Failed reads retain cached telemetry without publishing a false empty battery.\n- Keeps the laser disabled when startup power status is unavailable.\n\nBuilt from the November firmware integration source at commit 22b8917. All three product firmware builds and eight focused startup/shutdown host regression runners passed. Hardware verification has not been performed for this update. This signed beta OTA package is distributed through the alpha stream and contains no factory image.\n"
+    },
+    {
+      "version": "1.3.70",
+      "channel": "alpha",
+      "publishedAt": "2026-10-28T19:36:53Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.3.70/SmartBeam_OTA-1.3.70.bin",
+        "size": 679936,
+        "sha256": "05108742eea0b3bdea27e8cad770760df13928e49dde24c807493b7b5be43c7b"
+      },
+      "releaseNotes": "# SmartBeam 1.3.70 Beta\n\n- Retains fractional voltage-filter state and rejects isolated ADC spikes while preserving the existing voltage curves.\n- Holds SOC for 15 seconds after USB or charger transitions, then adjusts toward the model by at most one percentage point every 30 seconds.\n- Preserves CV progress through charger interruptions up to 60 seconds; requires 30 seconds of charger idle above 4000 mV to qualify full charge.\n- Latches qualified completion until USB removal, with a steady charge-complete indication and live USB/charger telemetry.\n- Uses five consecutive seconds at or below the existing 3310 mV empty threshold to avoid delaying depleted-battery shutdown.\n- Does not save SOC across boots.\n\nSigned beta OTA package for distribution through the alpha stream. Host regression tests passed for the battery changes; hardware validation has not been performed. Source, build configuration, release notes, signed artifacts and checksums are committed together in the firmware repository.\n"
     }
   ]
 }
