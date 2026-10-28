@@ -734,6 +734,23 @@
         "sha256": "37e5447e4b4acfb806db7508e60a94dfce234ec22770e2195c5f35ef9cfcce25"
       },
       "releaseNotes": "# SmartBroom 1.3.577 Beta\n\n- Uses ESP-IDF 6.1 across all three products, with the repository-maintained CMake private-header dependency correction.\n- Aligns compiler, Newlib, stack protection, watchdog, network/TLS and Bluetooth settings with SmartBroom while preserving product identity and signing keys.\n- Enables OTA rollback and 1000 Hz FreeRTOS ticks in every profile.\n- Keeps PM/tickless support compiled in with automatic light sleep disabled at startup; runtime can opt in later. Dev USB monitoring prevents automatic light sleep while connected.\n- Keeps the development bootloader silent and permanently disables ROM UART logging through the existing application-startup eFuse policy. App-only OTA does not replace the installed second-stage bootloader.\n\nClean development build completed with zero compiler, linker or CMake warnings. Config-policy regression checks passed across all nine profiles; firmware tooling tests passed. Upstream SDK Kconfig notices remain. Physical hardware and OTA migration validation have not been performed.\n\nSigned beta OTA package for the alpha stream. Source, effective build configuration, SDK patch, release notes, signed artifact and checksums are committed together in the firmware repository. No SOC persistence was added.\n"
+    },
+    {
+      "version": "1.3.578",
+      "channel": "alpha",
+      "publishedAt": "2026-10-28T20:36:26Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.578/SmartBroom_OTA-1.3.578.bin",
+        "size": 737280,
+        "sha256": "128138d7c3f7ccc107792739506ce6d6bcb47960c84860740662b78a7731c2f3"
+      },
+      "releaseNotes": "# SmartBroom 1.3.578 Beta\n\n- Rebuilt against a verified clean, unmodified ESP-IDF v6.1 checkout.\n- Removes automatic SDK patching and the private-header CMake patch from the firmware tooling.\n- Retains the aligned compiler, Newlib, stack-protection, watchdog, BLE, network/TLS, OTA rollback and 1000 Hz settings.\n- Keeps automatic light sleep disabled at startup with runtime support compiled in, and retains dev USB monitor sleep protection.\n\nClean build passed with zero compiler/linker warnings or errors. The five upstream Wi-Fi/supplicant CMake include-ownership warnings remain visible, along with SDK Kconfig notices. All nine configuration checks and 17 firmware tooling tests passed. Hardware/OTA migration validation has not been performed.\n\nSigned beta OTA package for the alpha stream. Prior releases remain immutable. App-only OTA does not replace the installed second-stage bootloader. Source, effective build configuration, release notes, signed image and checksums are committed together in the firmware repository.\n"
     }
   ]
 }
