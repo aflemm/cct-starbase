@@ -83,6 +83,22 @@
         "sha256": "ebb39fd68937083a747eb060675f72dc90df1d89b4d8d83ff16f813154e17f1c"
       },
       "releaseNotes": "# LightBroom 1.1.192 Beta\n\n- Keeps charge completion latched for the USB connection through SOC dips and charger maintenance cycling.\n- Shows a steady full green SOC bar after completion and keeps the 30-minute play-dead dark timer progressing through SOC dips.\n- Clears completion when USB is removed; measured battery telemetry remains unchanged.\n\nSigned beta OTA package for distribution through the alpha stream. Host regression tests passed for the battery changes; hardware validation has not been performed. Source, build configuration, release notes, signed artifacts and checksums are committed together in the firmware repository.\n"
+    },
+    {
+      "version": "1.1.197",
+      "channel": "alpha",
+      "publishedAt": "2026-10-28T20:06:37Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.197/LightBroom_OTA-1.1.197.bin",
+        "size": 679936,
+        "sha256": "bb5e6e587ff36d79b6182cc4449f33a3a4a7c50bbd4c1b8be12491b4e12215a2"
+      },
+      "releaseNotes": "# LightBroom 1.1.197 Beta\n\n- Uses ESP-IDF 6.1 across all three products, with the repository-maintained CMake private-header dependency correction.\n- Aligns compiler, Newlib, stack protection, watchdog, network/TLS and Bluetooth settings with SmartBroom while preserving product identity and signing keys.\n- Enables OTA rollback and 1000 Hz FreeRTOS ticks in every profile.\n- Keeps PM/tickless support compiled in with automatic light sleep disabled at startup; runtime can opt in later. Dev USB monitoring prevents automatic light sleep while connected.\n- Keeps the development bootloader silent and permanently disables ROM UART logging through the existing application-startup eFuse policy. App-only OTA does not replace the installed second-stage bootloader.\n\nClean development build completed with zero compiler, linker or CMake warnings. Config-policy regression checks passed across all nine profiles; firmware tooling tests passed. Upstream SDK Kconfig notices remain. Physical hardware and OTA migration validation have not been performed.\n\nSigned beta OTA package for the alpha stream. Source, effective build configuration, SDK patch, release notes, signed artifact and checksums are committed together in the firmware repository. No SOC persistence was added.\n"
     }
   ]
 }

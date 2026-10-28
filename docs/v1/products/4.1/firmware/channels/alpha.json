@@ -67,6 +67,22 @@
         "sha256": "05108742eea0b3bdea27e8cad770760df13928e49dde24c807493b7b5be43c7b"
       },
       "releaseNotes": "# SmartBeam 1.3.70 Beta\n\n- Retains fractional voltage-filter state and rejects isolated ADC spikes while preserving the existing voltage curves.\n- Holds SOC for 15 seconds after USB or charger transitions, then adjusts toward the model by at most one percentage point every 30 seconds.\n- Preserves CV progress through charger interruptions up to 60 seconds; requires 30 seconds of charger idle above 4000 mV to qualify full charge.\n- Latches qualified completion until USB removal, with a steady charge-complete indication and live USB/charger telemetry.\n- Uses five consecutive seconds at or below the existing 3310 mV empty threshold to avoid delaying depleted-battery shutdown.\n- Does not save SOC across boots.\n\nSigned beta OTA package for distribution through the alpha stream. Host regression tests passed for the battery changes; hardware validation has not been performed. Source, build configuration, release notes, signed artifacts and checksums are committed together in the firmware repository.\n"
+    },
+    {
+      "version": "1.3.77",
+      "channel": "alpha",
+      "publishedAt": "2026-10-28T20:06:36Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.3.77/SmartBeam_OTA-1.3.77.bin",
+        "size": 610304,
+        "sha256": "512b866f31ef261abdd40d53b48d4e8ba242a083a46c45f2cabfdadfc2144ce0"
+      },
+      "releaseNotes": "# SmartBeam 1.3.77 Beta\n\n- Uses ESP-IDF 6.1 across all three products, with the repository-maintained CMake private-header dependency correction.\n- Aligns compiler, Newlib, stack protection, watchdog, network/TLS and Bluetooth settings with SmartBroom while preserving product identity and signing keys.\n- Enables OTA rollback and 1000 Hz FreeRTOS ticks in every profile.\n- Keeps PM/tickless support compiled in with automatic light sleep disabled at startup; runtime can opt in later. Dev USB monitoring prevents automatic light sleep while connected.\n- Keeps the development bootloader silent and permanently disables ROM UART logging through the existing application-startup eFuse policy. App-only OTA does not replace the installed second-stage bootloader.\n\nClean development build completed with zero compiler, linker or CMake warnings. Config-policy regression checks passed across all nine profiles; firmware tooling tests passed. Upstream SDK Kconfig notices remain. Physical hardware and OTA migration validation have not been performed.\n\nSigned beta OTA package for the alpha stream. Source, effective build configuration, SDK patch, release notes, signed artifact and checksums are committed together in the firmware repository. No SOC persistence was added.\n"
     }
   ]
 }
