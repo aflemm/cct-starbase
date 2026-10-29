@@ -115,6 +115,22 @@
         "sha256": "64c205b5debc95e14caefdb228ccc5e4aad0640781e25d75f7db6be1dd92b96a"
       },
       "releaseNotes": "# LightBroom 1.1.198 Beta\n\n- Rebuilt against a verified clean, unmodified ESP-IDF v6.1 checkout.\n- Removes automatic SDK patching and the private-header CMake patch from the firmware tooling.\n- Retains the aligned compiler, Newlib, stack-protection, watchdog, BLE, network/TLS, OTA rollback and 1000 Hz settings.\n- Keeps automatic light sleep disabled at startup with runtime support compiled in, and retains dev USB monitor sleep protection.\n\nClean build passed with zero compiler/linker warnings or errors. The five upstream Wi-Fi/supplicant CMake include-ownership warnings remain visible, along with SDK Kconfig notices. All nine configuration checks and 17 firmware tooling tests passed. Hardware/OTA migration validation has not been performed.\n\nSigned beta OTA package for the alpha stream. Prior releases remain immutable. App-only OTA does not replace the installed second-stage bootloader. Source, effective build configuration, release notes, signed image and checksums are committed together in the firmware repository.\n"
+    },
+    {
+      "version": "1.1.203",
+      "channel": "alpha",
+      "publishedAt": "2026-10-29T00:11:05Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.203/LightBroom_OTA-1.1.203.bin",
+        "size": 679936,
+        "sha256": "2ee2e34785fcb772b5ec76f7000c5c1b1d234f61e3fe9766b8eda22104518fa8"
+      },
+      "releaseNotes": "# LightBroom 1.1.203 Beta\n\n- At 5% battery charge or below, the first battery LED now breathes while charging.\n- Low-battery flashing applies only when not charging and resumes when charging stops.\n- Adds regression coverage for breathing across both flash phases and the transition back to flashing.\n\nHost lifecycle, shutdown display, startup SOC and SOC renderer regression checks passed. Hardware validation has not been performed.\n\nSigned beta OTA package for the alpha stream. Source, effective build configuration, release notes, signed image and checksums are committed together in the firmware repository.\n"
     }
   ]
 }
