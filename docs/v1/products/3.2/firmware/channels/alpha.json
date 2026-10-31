@@ -785,6 +785,23 @@
         "sha256": "bb433b455606880d2f998982db1d07412ae700b8e5e765770c3e312fa5fc124d"
       },
       "releaseNotes": "# SmartBroom 1.3.583 Beta\n\n- On the first migration of 1.2 (V1) engineering settings to 1.3, set the no-sweeping timeout to 30 minutes and the no-motion timeout to 5 minutes. These values replace existing custom timeouts once.\n- Preserve subsequent saved timeout changes and existing V2/V3 preferences. Keep the original 1.2 settings record intact for rollback.\n- Retain the existing migration behavior for autotare defaults and one-time low-battery shutdown enablement.\n\nValidation: autotare and settings-migration host regressions passed, including timeout replacement, subsequent saved preference preservation, and rollback record preservation. Physical OTA migration validation remains pending.\n\nSigned beta OTA package for the alpha channel.\n"
+    },
+    {
+      "version": "1.3.592",
+      "channel": "alpha",
+      "publishedAt": "2026-10-31T15:24:55Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.592/SmartBroom_OTA-1.3.592.bin",
+        "size": 737280,
+        "sha256": "2bee305a800243d4d1ce0c9e2368b1d67440a18529ca500b9cc0e73164b1b0c0"
+      },
+      "releaseNotes": "# SmartBroom 1.3.592 Beta\n\n- Latch charge completion above 95% SOC (96\u2013100%) while USB is connected, instead of requiring 100%. The battery LED becomes steady dim green and remains complete through later SOC dips.\n- Use the same threshold for the existing 30-minute LED timeout in charging play-dead mode. Charging control is unchanged; the battery may continue charging after the completion indication appears.\n- Clear the LED completion latch on USB removal even while gauge readings are unavailable, preventing stale completion after reconnecting USB.\n- Includes the 1.2 migration timeout update from 1.3.583: 30 minutes without sweeping and 5 minutes without motion.\n\nValidation: charge-session and battery host regressions passed, including the 95/96% boundary, SOC dips, unavailable readings, unplug/replug, and the 30-minute timeout boundary. Physical hardware and OTA validation of this change remain pending.\n\nSigned beta OTA package for the alpha channel.\n"
     }
   ]
 }
