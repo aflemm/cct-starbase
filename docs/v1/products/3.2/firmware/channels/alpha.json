@@ -768,6 +768,23 @@
         "sha256": "68040c6fca95f8c02a8377c152d66aedbd1dcf1f74fa45f3f3b6e5de79bc0e6c"
       },
       "releaseNotes": "# SmartBroom 1.3.580 Beta\n\n- Increase the default motion idle shutdown timeout from 60 seconds to 300 seconds (5 minutes).\n- Existing saved no-motion timeout settings retain their configured value.\n\nSigned beta OTA package for the alpha stream. Firmware build and signature verification passed. Hardware and OTA validation have not been performed. App-only OTA does not replace the installed second-stage bootloader.\n"
+    },
+    {
+      "version": "1.3.583",
+      "channel": "alpha",
+      "publishedAt": "2026-10-31T14:46:54Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.583/SmartBroom_OTA-1.3.583.bin",
+        "size": 737280,
+        "sha256": "bb433b455606880d2f998982db1d07412ae700b8e5e765770c3e312fa5fc124d"
+      },
+      "releaseNotes": "# SmartBroom 1.3.583 Beta\n\n- On the first migration of 1.2 (V1) engineering settings to 1.3, set the no-sweeping timeout to 30 minutes and the no-motion timeout to 5 minutes. These values replace existing custom timeouts once.\n- Preserve subsequent saved timeout changes and existing V2/V3 preferences. Keep the original 1.2 settings record intact for rollback.\n- Retain the existing migration behavior for autotare defaults and one-time low-battery shutdown enablement.\n\nValidation: autotare and settings-migration host regressions passed, including timeout replacement, subsequent saved preference preservation, and rollback record preservation. Physical OTA migration validation remains pending.\n\nSigned beta OTA package for the alpha channel.\n"
     }
   ]
 }
