@@ -3,5 +3,22 @@
   "productId": "5.1",
   "productName": "LightBroom",
   "channel": "release",
-  "releases": []
+  "releases": [
+    {
+      "version": "1.1.0",
+      "channel": "release",
+      "publishedAt": "2026-11-02T22:14:42Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.1.0/LightBroom_OTA-1.1.0.bin",
+        "size": 724992,
+        "sha256": "19003c159b44b12cae94b77098ee4ec37039d103811f84de4415ba397114c887"
+      },
+      "releaseNotes": "## LightBroom 1.1.0\n\n- Improves startup when USB power is connected, shutdown responsiveness, and waking by button press or shaking.\n- Shows battery charge earlier during startup, including USB power-on.\n- Improves battery estimation and charging indication, including low-battery charging and charge completion.\n- Improves OTA update reliability.\n"
+    }
+  ]
 }
