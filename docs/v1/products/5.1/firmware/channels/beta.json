@@ -18,7 +18,7 @@
         "size": 724992,
         "sha256": "19003c159b44b12cae94b77098ee4ec37039d103811f84de4415ba397114c887"
       },
-      "releaseNotes": "## LightBroom 1.1.0\n\n- Improves USB charging startup, shutdown responsiveness, and button and shake wake.\n- Shows battery charge earlier during startup, including USB power-on.\n- Improves battery estimation and charging indication, including low-battery charging and charge completion.\n- Improves OTA update reliability and handling of fragmented Bluetooth writes.\n- Preserves saved device identity when storage reads fail and reports unsuccessful identity changes.\n"
+      "releaseNotes": "## LightBroom 1.1.0\n\n- Improves startup when USB power is connected, shutdown responsiveness, and waking by button press or shaking.\n- Shows battery charge earlier during startup, including USB power-on.\n- Improves battery estimation and charging indication, including low-battery charging and charge completion.\n- Improves OTA update reliability.\n"
     },
     {
       "version": "1.1.48",
