@@ -104,7 +104,7 @@
         "size": 790528,
         "sha256": "9b890ac430ed4a0ae34929c11f9b09fbeb2e8b2bb9a061820b4bd3f0161bc4ec"
       },
-      "releaseNotes": "## SmartBroom 1.3.0\n\n- Adds gradual autotare, configurable tare controls, force-zero indication and button tare, with improved stability and force processing after plowing.\n- Improves battery estimation, charging indication, USB power handling and early startup battery feedback.\n- Improves startup, shutdown, Bluetooth update recovery and persistence, including compatibility with saved calibration and settings from 1.2.\n- Sets the default no-sweeping timeout to 30 minutes. Existing saved timeout values are preserved.\n- Updates the firmware platform to ESP-IDF 6.1 and suppresses ROM UART logging on product GPIOs.\n\nSigned production firmware, initially distributed through the beta channel.\n"
+      "releaseNotes": "## SmartBroom 1.3.0\n\n- Improves reliability of background automatic tare\n- Adds force-zero LED indication feature (configurable)\n- Improves reliability of plow-detection\n- Improves battery estimation, charging indication, and USB power handling.\n"
     },
     {
       "version": "1.3.106",
