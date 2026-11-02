@@ -122,6 +122,23 @@
         "sha256": "6af3824bbc789ef441d06274f689f113439d403cd3a2709e0e78c326cd78db20"
       },
       "releaseNotes": "# SmartBroom 1.3.837 Beta\n\n- Show battery state-of-charge colour from an early gauge reading while normal gauge preflight continues. Verified readings update the same cached battery state and correct the colour when needed.\n- Keep the battery LED dark until SOC is available, removing the brief white startup flash.\n- Keep startup qualification and low-battery shutdown dependent on verified gauge readiness. Provisional readings do not latch charge completion, and failed initialization invalidates them.\n- Include upgrade and persistence hardening since the previous beta: preserve calibration during initialization, reject CRC-invalid stored records, and persist the download cursor before discarding transferred records from the active view.\n- Retain Wi-Fi build support; the experimental Wi-Fi override and SDK workaround are not included.\n\nValidation: all 20 host release-gate groups passed with coverage and SDK configuration checks, with zero known firmware regressions. Early SOC, corrected SOC, initialization failure, and charging indication regressions passed. Full sealed-device OTA and electrical qualification remain separate from host validation.\n\nSigned OTA beta package for the Starbase beta stream.\n"
+    },
+    {
+      "version": "1.3.839",
+      "channel": "beta",
+      "publishedAt": "2026-11-02T18:38:54Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.839/SmartBroom_OTA-1.3.839.bin",
+        "size": 741376,
+        "sha256": "888e4e06c162ad40854b91ddedeb0926c8bc05999b3b3e25bfda2a18c426a23e"
+      },
+      "releaseNotes": "# SmartBroom 1.3.839 Beta\n\n- Change the default no-sweeping timeout to 30 minutes (1,800 seconds), previously 10 minutes.\n- Preserve existing saved timeout values without migration. New configurations and default resets, including bondage release, use the new default.\n\nValidation: SmartBroom ESP-IDF development build completed successfully with no compiler warnings or errors; TeCalSer schema synchronization and Git whitespace checks passed.\n\nSigned OTA beta package for the Starbase beta stream.\n"
     }
   ]
 }
