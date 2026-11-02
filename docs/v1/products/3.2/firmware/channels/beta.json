@@ -105,6 +105,23 @@
         "sha256": "694090a298d231deb91b95bc498073555a7d021455d1ddf5f35d2b87d4bec634"
       },
       "releaseNotes": "# SmartBroom 1.3.106 Beta\n\n- LED initialization now selects RMT explicitly through the shared LED component, preserving SmartBroom's maximum 96-symbol transmit buffer and existing LED indications.\n- Includes background battery gauge initialization, independent battery telemetry updates and improved USB charging startup and shutdown handling from the 1.3 development line.\n- OTA confirmation waits for required services and baseline battery gauge readiness.\n\nThis signed beta OTA package is distributed through the beta channel for product 3.2 (SmartBroom). It does not include a factory image.\n"
+    },
+    {
+      "version": "1.3.837",
+      "channel": "beta",
+      "publishedAt": "2026-11-02T16:01:00Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.3.837/SmartBroom_OTA-1.3.837.bin",
+        "size": 741376,
+        "sha256": "6af3824bbc789ef441d06274f689f113439d403cd3a2709e0e78c326cd78db20"
+      },
+      "releaseNotes": "# SmartBroom 1.3.837 Beta\n\n- Show battery state-of-charge colour from an early gauge reading while normal gauge preflight continues. Verified readings update the same cached battery state and correct the colour when needed.\n- Keep the battery LED dark until SOC is available, removing the brief white startup flash.\n- Keep startup qualification and low-battery shutdown dependent on verified gauge readiness. Provisional readings do not latch charge completion, and failed initialization invalidates them.\n- Include upgrade and persistence hardening since the previous beta: preserve calibration during initialization, reject CRC-invalid stored records, and persist the download cursor before discarding transferred records from the active view.\n- Retain Wi-Fi build support; the experimental Wi-Fi override and SDK workaround are not included.\n\nValidation: all 20 host release-gate groups passed with coverage and SDK configuration checks, with zero known firmware regressions. Early SOC, corrected SOC, initialization failure, and charging indication regressions passed. Full sealed-device OTA and electrical qualification remain separate from host validation.\n\nSigned OTA beta package for the Starbase beta stream.\n"
     }
   ]
 }
