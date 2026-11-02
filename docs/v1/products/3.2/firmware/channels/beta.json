@@ -90,23 +90,6 @@
       "releaseNotes": "## SmartBroom beta 1.2.1\n\n### Fixes\n\n- Starts a new stroke stream after plowing, so the first following push is not paired with plow exit or reported with a false cadence period.\n\n### Behavioral/contract changes\n\n- The first push after a plow emits a period of 0 ms. Apps should treat this as no cadence period available, matching the first push of a new sweep."
     },
     {
-      "version": "1.3.0",
-      "channel": "beta",
-      "publishedAt": "2026-11-02T18:54:42Z",
-      "presentation": "automatic",
-      "compatibility": {
-        "minimumHardwareVersion": "0.2",
-        "minimumCurrentFirmwareVersion": "1.0.600",
-        "maximumHardwareVersion": "1.0"
-      },
-      "image": {
-        "url": "../releases/1.3.0/SmartBroom_OTA-1.3.0.bin",
-        "size": 790528,
-        "sha256": "9b890ac430ed4a0ae34929c11f9b09fbeb2e8b2bb9a061820b4bd3f0161bc4ec"
-      },
-      "releaseNotes": "## SmartBroom 1.3.0\n\n- Improves reliability of background automatic tare\n- Adds force-zero LED indication feature (configurable)\n- Improves reliability of plow-detection\n- Improves battery estimation, charging indication, and USB power handling.\n"
-    },
-    {
       "version": "1.3.106",
       "channel": "beta",
       "publishedAt": "2026-10-19T18:49:31Z",
