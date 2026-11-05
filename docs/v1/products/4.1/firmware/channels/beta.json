@@ -81,6 +81,22 @@
         "sha256": "e5797d03dc4ceda033b706748f412a7e8e09826a939c3962ce78f9982d355c32"
       },
       "releaseNotes": "# SmartBeam 1.3.191 Beta\n\n- Preserves the current battery percentage when constant-voltage (CV) charging begins, so the estimate no longer falls toward 80%.\n- Prorates the remaining CV charging time from the starting percentage: 90% leaves 22.5 minutes and 95% leaves 11.25 minutes under the existing model.\n- Retains display smoothing, short-interruption handling, and confirmed charge completion before advancing to 100%.\n\nValidation: all 12 SmartBeam automated host regression groups passed, including CV entry below 80%, at 90%, at 95%, at 100%, and CV session restart. Target firmware build passed. Physical charging qualification has not been performed for this build.\n\nSigned beta OTA package for the beta stream. Earlier releases remain immutable.\n"
+    },
+    {
+      "version": "1.4.23",
+      "channel": "beta",
+      "publishedAt": "2026-11-05T21:59:44Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.4.23/SmartBeam_OTA-1.4.23.bin",
+        "size": 610304,
+        "sha256": "cd45f4fb1ba0fa5387f1118e85c29cb0a940d22709a364e5e4c5803e6e17d269"
+      },
+      "releaseNotes": "# SmartBeam 1.4.23 beta\n\n- Improves button debounce and release timing.\n- Adds internal stuck-button diagnostics; existing emergency reset behavior is retained.\n"
     }
   ]
 }
