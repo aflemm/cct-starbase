@@ -88,8 +88,7 @@
         "size": 790528,
         "sha256": "7d0ab58f8a00be5c4a6972bfee0b62d6721ffe3ebb98d4c90ca700be16b9adb3"
       },
-      "releaseNotes": "# SmartBroom 1.4.0\n\n- Detects stuck power buttons and indicates the fault.\n- Restores operation with a charger unplug/replug when the button is stuck.\n- Improves USB detection and Bluetooth reliability.\n",
-      "urgency": "high"
+      "releaseNotes": "# SmartBroom 1.4.0\n\n- Detects stuck power buttons and indicates the fault.\n- Restores operation with a charger unplug/replug when the button is stuck.\n- Improves USB detection and Bluetooth reliability.\n"
     }
   ]
 }
