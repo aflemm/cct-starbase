@@ -99,6 +99,22 @@
         "sha256": "884ac13635613f590d61f0e6f11b6eed79a21c5aa81be6d281ff55144a2afe6f"
       },
       "releaseNotes": "# SmartBeam 1.3.78 Beta\n\n- Rebuilt against a verified clean, unmodified ESP-IDF v6.1 checkout.\n- Removes automatic SDK patching and the private-header CMake patch from the firmware tooling.\n- Retains the aligned compiler, Newlib, stack-protection, watchdog, BLE, network/TLS, OTA rollback and 1000 Hz settings.\n- Keeps automatic light sleep disabled at startup with runtime support compiled in, and retains dev USB monitor sleep protection.\n\nClean build passed with zero compiler/linker warnings or errors. The five upstream Wi-Fi/supplicant CMake include-ownership warnings remain visible, along with SDK Kconfig notices. All nine configuration checks and 17 firmware tooling tests passed. Hardware/OTA migration validation has not been performed.\n\nSigned beta OTA package for the alpha stream. Prior releases remain immutable. App-only OTA does not replace the installed second-stage bootloader. Source, effective build configuration, release notes, signed image and checksums are committed together in the firmware repository.\n"
+    },
+    {
+      "version": "1.4.64",
+      "channel": "alpha",
+      "publishedAt": "2026-11-06T17:59:49Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.4.64/SmartBeam_OTA-1.4.64.bin",
+        "size": 610304,
+        "sha256": "3e48a8d4a49f7c03308359be5c7b4bae6ff7ccaa0d71fb521e3916ac12262e4b"
+      },
+      "releaseNotes": "# SmartBeam 1.4.64 experimental beta\n\n- Disables Bluetooth controller modem sleep for beam-to-beam split-time comparison against 1.4.43, which enables mode 1 with the main crystal clock.\n- Uses the same firmware source as 1.4.43 and the standard development/beta profile with USB INFO logging. Effective configuration differs only in the version and Bluetooth modem-sleep settings derived from disabling sleep.\n- Normal development and production defaults continue to enable modem sleep. This package is an experimental build for the alpha stream.\n\nAll 12 SmartBeam host regression groups and the standard all-product configuration-policy checks passed. ESP-IDF build, signed-image verification, and package checksums passed. Physical timing, battery-current, and OTA qualification are pending.\n\nTo reproduce the experimental configuration, copy the committed sdkconfig.build to firmware/products/smartbeam/config/sdkconfig.dev, then invoke ./tools/firmware.sh smartbeam build. The wrapper increments the development version for the new build. For a normal sleep-enabled build, regenerate sdkconfig.dev from the normal defaults first.\n"
     }
   ]
 }
