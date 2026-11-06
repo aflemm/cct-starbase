@@ -89,6 +89,24 @@
         "sha256": "7d0ab58f8a00be5c4a6972bfee0b62d6721ffe3ebb98d4c90ca700be16b9adb3"
       },
       "releaseNotes": "# SmartBroom 1.4.0\n\n- Detects stuck power buttons and indicates the fault.\n- Restores operation with a charger unplug/replug when the button is stuck.\n- Improves USB detection and Bluetooth reliability.\n"
+    },
+    {
+      "version": "1.5.0",
+      "channel": "release",
+      "publishedAt": "2026-11-06T18:53:20Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.0",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.5.0/SmartBroom_OTA-1.5.0.bin",
+        "size": 790528,
+        "sha256": "11b891350b4e11140dfe4c039edbd14cfa0261bfd44d59f6782f5bfc5c17695f"
+      },
+      "releaseNotes": "# SmartBroom 1.5.0\n\n- Reduces battery use during operation.\n\n## 1.4.0\n\n- Warns when the power button is stuck and improves recovery from the fault.\n- Improves charging detection and Bluetooth connection reliability.\n\n## 1.3.0\n\n- Improves automatic tare reliability.\n- Adds an optional light indication when force is zero.\n- Improves plow detection.\n- Improves battery estimates, charging indication, and USB power handling.\n",
+      "urgency": "high"
     }
   ]
 }

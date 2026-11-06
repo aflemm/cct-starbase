@@ -52,6 +52,22 @@
         "sha256": "03ee76029ae5c34bd19cbf628a39783f728eb19b1340ef43ab261bd26bf699c1"
       },
       "releaseNotes": "## SmartBeam 1.3.0\n\n- Improves charging-only USB startup, button wake, shutdown responsiveness.\n- Improves battery SOC estimation when transitioning to charging.\n- Improves OTA update reliability."
+    },
+    {
+      "version": "1.4.0",
+      "channel": "release",
+      "publishedAt": "2026-11-06T18:53:20Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.4.0/SmartBeam_OTA-1.4.0.bin",
+        "size": 659456,
+        "sha256": "fc72e1ae7e55b5e86b2e75bf7e0a067ce92c59d3e996737a08be424d1aff19dc"
+      },
+      "releaseNotes": "# SmartBeam 1.4.0\n\n- Reduces battery use during operation.\n- Improves power-button responsiveness and Bluetooth connection reliability.\n\n## 1.3.0\n\n- Improves startup while charging, waking with the power button, and shutdown responsiveness.\n- Improves battery estimates when charging begins.\n- Improves firmware update reliability.\n"
     }
   ]
 }
