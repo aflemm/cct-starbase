@@ -113,6 +113,22 @@
         "sha256": "6d6ee14900a9f887693da12ff1d34374a9568515269047270aa96b8189cce599"
       },
       "releaseNotes": "# SmartBeam 1.4.43 beta\n\n- Standard beta/development profile with Bluetooth modem sleep enabled (mode 1, main crystal clock).\n- Includes the all-product configuration check requiring production and development Bluetooth sleep settings to match.\n\nHost validation and ESP-IDF firmware build passed. Battery-current measurements and physical device qualification remain pending.\n"
+    },
+    {
+      "version": "1.4.84",
+      "channel": "beta",
+      "publishedAt": "2026-11-06T18:28:14Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.4.84/SmartBeam_OTA-1.4.84.bin",
+        "size": 610304,
+        "sha256": "0929012fd56cfbd2e75ccf42529c5e49543c8c62d64407bb3caedcc09359053a"
+      },
+      "releaseNotes": "# SmartBeam 1.4.84 beta\n\n- Returns to the standard beta/development profile with Bluetooth modem sleep enabled, mode 1, and the main crystal clock, following the sleep-disabled 1.4.64 alpha experiment.\n- Confirms Bluetooth modem sleep as the production plan, matching SmartBroom and Inner Light. User timing tests found modem sleep acceptable for timing accuracy.\n- Retains USB INFO logging and the standard BLE connection policy. No runtime sleep-disable override is applied during timing.\n\nAll 13 SmartBeam host release-gate groups, including the all-product configuration policy, passed. This records the reported timing-test conclusion without asserting a measured edge-to-phone delivery latency bound.\n"
     }
   ]
 }
