@@ -97,6 +97,22 @@
         "sha256": "cd45f4fb1ba0fa5387f1118e85c29cb0a940d22709a364e5e4c5803e6e17d269"
       },
       "releaseNotes": "# SmartBeam 1.4.23 beta\n\n- Improves button debounce and release timing.\n- Adds internal stuck-button diagnostics; existing emergency reset behavior is retained.\n"
+    },
+    {
+      "version": "1.4.43",
+      "channel": "beta",
+      "publishedAt": "2026-11-06T02:38:08Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.0",
+        "minimumCurrentFirmwareVersion": "1.0.0"
+      },
+      "image": {
+        "url": "../releases/1.4.43/SmartBeam_OTA-1.4.43.bin",
+        "size": 610304,
+        "sha256": "6d6ee14900a9f887693da12ff1d34374a9568515269047270aa96b8189cce599"
+      },
+      "releaseNotes": "# SmartBeam 1.4.43 beta\n\n- Standard beta/development profile with Bluetooth modem sleep enabled (mode 1, main crystal clock).\n- Includes the all-product configuration check requiring production and development Bluetooth sleep settings to match.\n\nHost validation and ESP-IDF firmware build passed. Battery-current measurements and physical device qualification remain pending.\n"
     }
   ]
 }

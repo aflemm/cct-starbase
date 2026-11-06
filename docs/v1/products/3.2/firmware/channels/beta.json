@@ -156,6 +156,23 @@
         "sha256": "1fa519ec99027379697312e88e5c5d8e4294054db92bcf47a95c1cb48d784e99"
       },
       "releaseNotes": "# SmartBroom 1.5.1 beta\n\n- Enable Bluetooth modem sleep in the production profile to match development and beta power settings. This addresses a configuration difference associated with higher battery current in production; electrical validation is pending.\n- This beta uses the production profile, including secure boot, flash encryption policy, and disabled application console.\n- Add configuration validation requiring SmartBroom production and development Bluetooth modem sleep mode and clock settings.\n"
+    },
+    {
+      "version": "1.5.105",
+      "channel": "beta",
+      "publishedAt": "2026-11-06T02:38:08Z",
+      "presentation": "automatic",
+      "compatibility": {
+        "minimumHardwareVersion": "0.2",
+        "minimumCurrentFirmwareVersion": "1.0.600",
+        "maximumHardwareVersion": "1.0"
+      },
+      "image": {
+        "url": "../releases/1.5.105/SmartBroom_OTA-1.5.105.bin",
+        "size": 745472,
+        "sha256": "39ab34b34ed0f76cabe1cc8286590578c7e7623325ca8042244e9296272762a2"
+      },
+      "releaseNotes": "# SmartBroom 1.5.105 beta\n\n- Standard beta/development profile with Bluetooth modem sleep enabled (mode 1, main crystal clock).\n- Includes the all-product configuration check requiring production and development Bluetooth sleep settings to match.\n- Returns beta distribution to the standard development profile following the production-profile 1.5.1 candidate.\n\nHost validation and ESP-IDF firmware build passed. Battery-current measurements and physical device qualification remain pending.\n"
     }
   ]
 }
